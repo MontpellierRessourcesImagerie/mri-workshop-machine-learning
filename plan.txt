@@ -1,0 +1,19 @@
+
+Segmentation et séparation des cellule dans un canal avec une marquage
+du cytoplasme a partir d'un marquage des nuclei.
+
+- Thresholding, Autothresholding
+- Seeded Watershed (ImageJ)
+- Voronoi-Based Segmentation, option "Propagate" (Cellprofiler)
+- Active Contours (Icy)
+
+Segmentation et classification des objets biologique via l’apprentissage
+automatique (machine learning)
+- introduction to machine learning
+-- supervised, unsupervised learning, classification, regresssion
+- training set (size, quality, ...)
+- shallow learning (weka, ilastik, cellprofiler analyst)
+--- feature selection, 
+--- random forest, bayesian network, la loi gamma
+- deep learning (tensorflow)
+cell cognition?
