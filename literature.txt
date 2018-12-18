@@ -1,2 +1,2 @@
-[A deep learning and novelty detection framework
-for rapid phenotyping in high-content screening](https://www.molbiolcell.org/doi/pdf/10.1091/mbc.e17-05-0333)
+link:https://www.molbiolcell.org/doi/pdf/10.1091/mbc.e17-05-0333[A deep learning and novelty detection framework
+for rapid phenotyping in high-content screening]
