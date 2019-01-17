@@ -1,0 +1,9 @@
+topics:
+
+-- machine learning 
+---- deep and shallow
+---- weka, ilastik
+-- cell segmentation with active contours in ICY and FIJI
+---- cellprofiler ?
+---- Knime, R
+---- macro, script, plugin, git / github

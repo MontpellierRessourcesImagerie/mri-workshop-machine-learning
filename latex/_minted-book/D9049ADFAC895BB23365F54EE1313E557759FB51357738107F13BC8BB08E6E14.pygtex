@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{sys}
+\PYG{k+kn}{import} \PYG{n+nn}{os}
+\PYG{k+kn}{from} \PYG{n+nn}{argparse} \PYG{k+kn}{import} \PYG{n}{ArgumentParser}
+\PYG{k+kn}{from} \PYG{n+nn}{cytomine} \PYG{k+kn}{import} \PYG{n}{Cytomine}
+
+\PYG{n}{parser} \PYG{o}{=} \PYG{n}{ArgumentParser}\PYG{p}{(}\PYG{n}{prog}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}hello\PYGZhy{}world\PYGZhy{}with\PYGZhy{}parameter.py\PYGZdq{}}\PYG{p}{,}
+ \PYG{n}{description}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Example with a parameter.\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}cytomine\PYGZus{}host\PYGZsq{}}\PYG{p}{,} \PYG{n}{dest}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}cytomine\PYGZus{}host\PYGZdq{}}\PYG{p}{,}
+\PYG{n}{default}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}http://localhost\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}cytomine\PYGZus{}public\PYGZus{}key\PYGZsq{}}\PYG{p}{,} \PYG{n}{dest}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}cytomine\PYGZus{}public\PYGZus{}key\PYGZdq{}}\PYG{p}{,}
+\PYG{n}{default}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}be6a39c5\PYGZhy{}a329\PYGZhy{}448b\PYGZhy{}9731\PYGZhy{}38729a42853d\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZhy{}\PYGZhy{}cytomine\PYGZus{}private\PYGZus{}key\PYGZsq{}}\PYG{p}{,}
+\PYG{n}{dest}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}cytomine\PYGZus{}private\PYGZus{}key\PYGZdq{}}\PYG{p}{,}
+\PYG{n}{default}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}81145b25\PYGZhy{}5660\PYGZhy{}451b\PYGZhy{}a779\PYGZhy{}e5ec61e74b1c\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}\PYGZhy{}cytomine\PYGZus{}id\PYGZus{}project\PYGZdq{}}\PYG{p}{,} \PYG{n}{dest}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}cytomine\PYGZus{}id\PYGZus{}project\PYGZdq{}}\PYG{p}{,}
+ \PYG{n}{default}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}1253\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}\PYGZhy{}ij\PYGZus{}scale,\PYGZdq{}}\PYG{p}{,} \PYG{n}{dest}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}scale\PYGZdq{}}\PYG{p}{,} \PYG{n}{default}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}3\PYGZdq{}}\PYG{p}{)}
+
+\PYG{n}{arguments}\PYG{p}{,} \PYG{n}{others} \PYG{o}{=} \PYG{n}{parser}\PYG{o}{.}\PYG{n}{parse\PYGZus{}known\PYGZus{}args}\PYG{p}{(}\PYG{n}{sys}\PYG{o}{.}\PYG{n}{argv}\PYG{p}{)}
+\PYG{n}{scale} \PYG{o}{=} \PYG{n}{arguments}\PYG{o}{.}\PYG{n}{scale}
+
+\PYG{n}{conn} \PYG{o}{=} \PYG{n}{Cytomine}\PYG{p}{(}\PYG{n}{arguments}\PYG{o}{.}\PYG{n}{cytomine\PYGZus{}host}\PYG{p}{,} \PYG{n}{arguments}\PYG{o}{.}\PYG{n}{cytomine\PYGZus{}public\PYGZus{}key}\PYG{p}{,}
+ \PYG{n}{arguments}\PYG{o}{.}\PYG{n}{cytomine\PYGZus{}private\PYGZus{}key}\PYG{p}{,} \PYG{n}{base\PYGZus{}path} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}/api/\PYGZsq{}}\PYG{p}{,}
+ \PYG{n}{working\PYGZus{}path} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}/tmp/\PYGZsq{}}\PYG{p}{,} \PYG{n}{verbose}\PYG{o}{=} \PYG{n+nb+bp}{True}\PYG{p}{))}
+\end{Verbatim}

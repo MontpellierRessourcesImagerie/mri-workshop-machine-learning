@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+ java \PYGZhy{}Xmx6000m \PYGZhy{}cp jars/ij\PYGZhy{}1.51n.jar ij.ImageJ \PYGZhy{}headless \PYGZhy{}\PYGZhy{}console \PYG{l+s+se}{\PYGZbs{}}
+      \PYGZhy{}macro separate\PYGZus{}nuclei.ijm \PYG{l+s+se}{\PYGZbs{}}
+      \PYG{l+s+s2}{\PYGZdq{}input=/data/in, output=/data/out, scale\PYGZus{}factor=3\PYGZdq{}}
+\end{Verbatim}

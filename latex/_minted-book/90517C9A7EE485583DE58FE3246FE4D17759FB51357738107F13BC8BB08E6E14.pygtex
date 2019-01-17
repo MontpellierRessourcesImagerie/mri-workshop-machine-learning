@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{subprocess} \PYG{k+kn}{import} \PYG{n}{call}
+\PYG{o}{...}
+\PYG{n}{job} \PYG{o}{=} \PYG{n}{conn}\PYG{o}{.}\PYG{n}{update\PYGZus{}job\PYGZus{}status}\PYG{p}{(}\PYG{n}{job}\PYG{p}{,} \PYG{n}{status} \PYG{o}{=} \PYG{n}{job}\PYG{o}{.}\PYG{n}{RUNNING}\PYG{p}{,} \PYG{n}{progress} \PYG{o}{=} \PYG{l+m+mi}{25}\PYG{p}{,}
+ \PYG{n}{status\PYGZus{}comment} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Launching workflow...\PYGZdq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Run the image analysis workflow (run the corresponding docker image)}
+\PYG{n}{shArgs} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}data/in data/out \PYGZdq{}}\PYG{o}{+}\PYG{n}{arguments}\PYG{o}{.}\PYG{n}{scale}
+\PYG{n}{command} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}docker run \PYGZhy{}\PYGZhy{}rm \PYGZhy{}v \PYGZdq{}}\PYG{o}{+}\PYG{n}{jobFolder}\PYG{o}{+}
+\PYG{l+s+s2}{\PYGZdq{}:/fiji/data baecker/separate\PYGZhy{}nuclei \PYGZdq{}} \PYG{o}{+} \PYG{n}{shArgs}
+\end{Verbatim}

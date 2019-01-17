@@ -1,0 +1,44 @@
+\chapter{Separating objects from each other}
+
+In the last chapter we saw how to separate foreground and background of an image by applying a threshold. The result is a binary image that we call a mask. For each pixel it tells us if the pixel belongs to the background or to the foreground. However if we have an image containing multiple cells the binary mask does not tell us to which cell a given pixel belongs. For measuring features of individual objects we need this information. If the objects are separated in the mask the problem is easy to solve:
+
+\begin{enumerate}
+\item set the counter to 1
+\item for each pixel do
+\begin{enumerate}
+\item if the pixel belongs to the foreground and has not yet been classified
+\begin{enumerate}
+\item push the pixel on the stack
+\item while the stack is not empty
+\begin{enumerate}
+\item pop the first pixel p from the stack
+\item set the pixel p to counter
+\item push all unclassified foreground pixels in the neighborhood of p to the stack
+\end{enumerate}
+\item increment the counter
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+For short, this algorithm works in the following way: find a foreground pixel and add all its neighbors and the neighbors of the neighbors and so on to the current class. Then switch to the next class and search for the next yet unclassified foreground pixel.
+
+\begin{figure}[h!]
+  \centering
+\begin{subfigure}[t]{0.30\textwidth}
+\includegraphics[width=\textwidth]{mask}
+    \caption[binary mask]{A binary mask. The image has been divided into foreground and background pixel.}
+    \label{binary-mask}
+\end{subfigure}  
+\begin{subfigure}[t]{0.30\textwidth}
+\includegraphics[width=\textwidth]{indexed-mask}
+    \caption[indexed mask]{An indexed mask. The background has the value 0 and each pixel has a value that indicates to which object it belongs.}
+    \label{indexed-mask}
+\end{subfigure}
+   \caption{Binary and indexed mask.}
+   \label{binary-and-indexed-mask}
+\end{figure}
+
+This solves the problem for separated objects. But what if the objects touch each other? 
+
+\subsection{The Watershed Transformation}
+

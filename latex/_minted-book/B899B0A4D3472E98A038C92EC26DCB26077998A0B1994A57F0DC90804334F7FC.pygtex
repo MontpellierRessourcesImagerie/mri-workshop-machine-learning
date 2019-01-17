@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+docker run \PYGZhy{}v \PYG{k}{\PYGZdl{}(}\PYG{n+nb}{pwd}\PYG{k}{)}:/fiji/data baecker/separate\PYGZhy{}nuclei \PYG{l+s+se}{\PYGZbs{}}
+            /bin/sh \PYGZhy{}c \PYG{l+s+s2}{\PYGZdq{}run\PYGZus{}separate\PYGZus{}nuclei.sh data/in data/out 3\PYGZdq{}}
+\end{Verbatim}

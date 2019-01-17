@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Calculate metrics}
+
+\PYG{c+c1}{\PYGZsh{} Download ground truth data}
+\PYG{n}{groundTruthDir} \PYG{o}{=} \PYG{n}{jobFolder} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}ground\PYGZus{}truth\PYGZdq{}}
+\PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{exists}\PYG{p}{(}\PYG{n}{groundTruthDir}\PYG{p}{):}
+	\PYG{n}{os}\PYG{o}{.}\PYG{n}{makedirs}\PYG{p}{(}\PYG{n}{groundTruthDir}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} Save each labeled mask with the id of the corresponding input image as filename.}
+\PYG{k}{for} \PYG{n}{image} \PYG{o+ow}{in} \PYG{n}{images}\PYG{p}{:}
+	\PYG{k}{if} \PYG{l+s+s2}{\PYGZdq{}labels\PYGZdq{}} \PYG{o+ow}{in} \PYG{n}{image}\PYG{o}{.}\PYG{n}{filename}\PYG{p}{:}
+		\PYG{n}{url} \PYG{o}{=} \PYG{n}{arguments}\PYG{o}{.}\PYG{n}{cytomine\PYGZus{}host}\PYG{o}{+}\PYG{l+s+s2}{\PYGZdq{}/api/imageinstance/\PYGZdq{}} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{image}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+									 \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}/download\PYGZdq{}}
+		\PYG{n}{inputImageFilename} \PYG{o}{=} \PYG{n}{remove\PYGZus{}prefix}\PYG{p}{(}\PYG{n}{image}\PYG{o}{.}\PYG{n}{originalFilename}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}labels\PYGZhy{}\PYGZdq{}}\PYG{p}{)}
+		\PYG{n}{filename} \PYG{o}{=} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{fileIDs}\PYG{p}{[}\PYG{n}{inputImageFilename}\PYG{p}{])}  \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}.tif\PYGZdq{}}
+		\PYG{n}{conn}\PYG{o}{.}\PYG{n}{fetch\PYGZus{}url\PYGZus{}into\PYGZus{}file}\PYG{p}{(}\PYG{n}{url}\PYG{p}{,} \PYG{n}{groundTruthDir}\PYG{o}{+}\PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}}\PYG{o}{+}\PYG{n}{filename}\PYG{p}{,} \PYG{n+nb+bp}{True}\PYG{p}{,} \PYG{n+nb+bp}{True}\PYG{p}{)}
+\end{Verbatim}

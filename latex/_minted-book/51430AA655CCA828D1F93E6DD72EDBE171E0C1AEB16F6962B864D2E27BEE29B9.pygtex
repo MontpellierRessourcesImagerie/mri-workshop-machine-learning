@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// Path to input image and output image (label mask)}
+\PYG{n}{inputDir} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}/data/in/\PYGZdq{}}\PYG{o}{;}
+\PYG{n}{outputDir} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}/data/out/\PYGZdq{}}\PYG{o}{;}
+
+\PYG{c+c1}{// Functional parameters}
+\PYG{n}{var} \PYG{n}{SCALE\PYGZus{}FACTOR} \PYG{o}{=} \PYG{l+m+mi}{5}\PYG{o}{;}
+
+\PYG{n}{arg} \PYG{o}{=} \PYG{n}{getArgument}\PYG{o}{();}
+\PYG{n}{parts} \PYG{o}{=} \PYG{n}{split}\PYG{o}{(}\PYG{n}{arg}\PYG{o}{,} \PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{o}{);}
+
+\PYG{k}{for}\PYG{o}{(}\PYG{n}{i}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{o}{;} \PYG{n}{i}\PYG{o}{\PYGZlt{}}\PYG{n}{parts}\PYG{o}{.}\PYG{n+na}{length}\PYG{o}{;} \PYG{n}{i}\PYG{o}{++)} \PYG{o}{\PYGZob{}}
+	\PYG{n}{nameAndValue} \PYG{o}{=} \PYG{n}{split}\PYG{o}{(}\PYG{n}{parts}\PYG{o}{[}\PYG{n}{i}\PYG{o}{],} \PYG{l+s}{\PYGZdq{}=\PYGZdq{}}\PYG{o}{);}
+	\PYG{k}{if} \PYG{o}{(}\PYG{n}{indexOf}\PYG{o}{(}\PYG{n}{nameAndValue}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{],} \PYG{l+s}{\PYGZdq{}input\PYGZdq{}}\PYG{o}{)\PYGZgt{}\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{)} \PYG{n}{inputDir}\PYG{o}{=}\PYG{n}{nameAndValue}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{];}
+	\PYG{k}{if} \PYG{o}{(}\PYG{n}{indexOf}\PYG{o}{(}\PYG{n}{nameAndValue}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{],} \PYG{l+s}{\PYGZdq{}output\PYGZdq{}}\PYG{o}{)\PYGZgt{}\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{)} \PYG{n}{outputDir}\PYG{o}{=}\PYG{n}{nameAndValue}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{];}
+	\PYG{k}{if} \PYG{o}{(}\PYG{n}{indexOf}\PYG{o}{(}\PYG{n}{nameAndValue}\PYG{o}{[}\PYG{l+m+mi}{0}\PYG{o}{],} \PYG{l+s}{\PYGZdq{}scale\PYGZus{}factor\PYGZdq{}}\PYG{o}{)\PYGZgt{}\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{)} \PYG{n}{SCALE\PYGZus{}FACTOR}\PYG{o}{=}\PYG{n}{nameAndValue}\PYG{o}{[}\PYG{l+m+mi}{1}\PYG{o}{];}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

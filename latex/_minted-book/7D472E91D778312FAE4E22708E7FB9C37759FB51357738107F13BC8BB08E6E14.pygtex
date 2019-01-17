@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{current\PYGZus{}user} \PYG{o}{=} \PYG{n}{conn}\PYG{o}{.}\PYG{n}{get\PYGZus{}current\PYGZus{}user}\PYG{p}{()}
+\PYG{n}{job} \PYG{o}{=} \PYG{n}{conn}\PYG{o}{.}\PYG{n}{get\PYGZus{}job}\PYG{p}{(}\PYG{n}{current\PYGZus{}user}\PYG{o}{.}\PYG{n}{job}\PYG{p}{)}
+\end{Verbatim}

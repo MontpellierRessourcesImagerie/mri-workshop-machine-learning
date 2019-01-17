@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+FROM baecker/fiji\PYGZhy{}base:latest
+
+RUN \PYG{n+nb}{cd} /fiji/macros \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{l+s+se}{\PYGZbs{}}
+    wget \PYGZhy{}O separate\PYGZus{}nuclei.ijm \PYG{l+s+se}{\PYGZbs{}}
+            https://gist.githubusercontent.com/../separate\PYGZus{}nuclei.ijm
+RUN \PYG{n+nb}{cd} /fiji \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{l+s+se}{\PYGZbs{}}
+    wget \PYGZhy{}O run\PYGZus{}separate\PYGZus{}nuclei.sh \PYG{l+s+se}{\PYGZbs{}}
+            https://gist.githubusercontent.com/../run\PYGZus{}separate\PYGZus{}nuclei.sh \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{l+s+se}{\PYGZbs{}}
+            chmod a+x run\PYGZus{}separate\PYGZus{}nuclei.sh
+ENTRYPOINT \PYG{o}{[}\PYG{l+s+s2}{\PYGZdq{}/bin/sh\PYGZdq{}}, \PYG{l+s+s2}{\PYGZdq{}run\PYGZus{}separate\PYGZus{}nuclei.sh\PYGZdq{}}\PYG{o}{]}
+\end{Verbatim}

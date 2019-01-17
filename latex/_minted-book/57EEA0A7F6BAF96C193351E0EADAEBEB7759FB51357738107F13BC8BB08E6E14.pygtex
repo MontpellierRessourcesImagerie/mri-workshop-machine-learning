@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{cytomine}
+\PYG{k+kn}{import} \PYG{n+nn}{sys}
+
+\PYG{c+c1}{\PYGZsh{}Connect to cytomine, edit connection values}
+
+\PYG{n}{cytomine\PYGZus{}host}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}localhost\PYGZdq{}}  \PYG{c+c1}{\PYGZsh{} Cytomine core URL}
+\PYG{n}{cytomine\PYGZus{}public\PYGZus{}key}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}xxxxxxxx\PYGZhy{}xxxx\PYGZhy{}xxxx\PYGZhy{}xxxx\PYGZhy{}xxxxxxxxxxxx\PYGZdq{}}  \PYG{c+c1}{\PYGZsh{} Your public key}
+\PYG{n}{cytomine\PYGZus{}private\PYGZus{}key}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}xxxxxxxx\PYGZhy{}xxxx\PYGZhy{}xxxx\PYGZhy{}xxxx\PYGZhy{}xxxxxxxxxxxx\PYGZdq{}} \PYG{c+c1}{\PYGZsh{} Your private key}
+\PYG{n}{id\PYGZus{}project}\PYG{o}{=}\PYG{n}{xxxx}
+
+\PYG{c+c1}{\PYGZsh{}Connection to Cytomine Core}
+\PYG{n}{conn} \PYG{o}{=} \PYG{n}{cytomine}\PYG{o}{.}\PYG{n}{Cytomine}\PYG{p}{(}\PYG{n}{cytomine\PYGZus{}host}\PYG{p}{,} \PYG{n}{cytomine\PYGZus{}public\PYGZus{}key}\PYG{p}{,}
+\PYG{n}{cytomine\PYGZus{}private\PYGZus{}key}\PYG{p}{,} \PYG{n}{base\PYGZus{}path} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}/api/\PYGZsq{}}\PYG{p}{,} \PYG{n}{working\PYGZus{}path} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}/tmp/\PYGZsq{}}\PYG{p}{,} \PYG{n}{verbose}\PYG{o}{=} \PYG{n+nb+bp}{True}\PYG{p}{)}
+
+\PYG{n}{execute\PYGZus{}command} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}python hello\PYGZhy{}world\PYGZhy{}with\PYGZhy{}parameter.py \PYGZdq{}} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}\PYGZhy{}ij\PYGZus{}scale \PYGZdl{}ij\PYGZus{}scale \PYGZdq{}}
+
+\PYG{c+c1}{\PYGZsh{}define software parameter template}
+\PYG{n}{software} \PYG{o}{=} \PYG{n}{conn}\PYG{o}{.}\PYG{n}{add\PYGZus{}software}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}hello\PYGZus{}world\PYGZus{}with\PYGZus{}parameter\PYGZdq{}}\PYG{p}{,}
+\PYG{l+s+s2}{\PYGZdq{}createRabbitJobWithArgsService\PYGZdq{}}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}ValidateAnnotation\PYGZdq{}}\PYG{p}{,} \PYG{n}{execute\PYGZus{}command}\PYG{p}{)}
+\PYG{n}{conn}\PYG{o}{.}\PYG{n}{add\PYGZus{}software\PYGZus{}parameter}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}ij\PYGZus{}scale\PYGZdq{}}\PYG{p}{,} \PYG{n}{software}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Number\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{n+nb+bp}{True}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{n+nb+bp}{False}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}for logging (set by server)}
+\PYG{n}{conn}\PYG{o}{.}\PYG{n}{add\PYGZus{}software\PYGZus{}parameter}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}cytomine\PYGZus{}id\PYGZus{}software\PYGZdq{}}\PYG{p}{,} \PYG{n}{software}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Number\PYGZdq{}}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nb+bp}{True}\PYG{p}{,} \PYG{l+m+mi}{400}\PYG{p}{,} \PYG{n+nb+bp}{True}\PYG{p}{)}
+\PYG{n}{conn}\PYG{o}{.}\PYG{n}{add\PYGZus{}software\PYGZus{}parameter}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}cytomine\PYGZus{}id\PYGZus{}project\PYGZdq{}}\PYG{p}{,} \PYG{n}{software}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Number\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nb+bp}{True}\PYG{p}{,} \PYG{l+m+mi}{500}\PYG{p}{,} \PYG{n+nb+bp}{True}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}add software to a given project}
+\PYG{n}{addSoftwareProject} \PYG{o}{=} \PYG{n}{conn}\PYG{o}{.}\PYG{n}{add\PYGZus{}software\PYGZus{}project}\PYG{p}{(}\PYG{n}{id\PYGZus{}project}\PYG{p}{,}\PYG{n}{software}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+\end{Verbatim}

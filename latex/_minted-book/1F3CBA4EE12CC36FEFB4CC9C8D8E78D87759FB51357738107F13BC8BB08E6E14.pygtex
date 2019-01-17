@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{cytomine.models} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{o}{...}
+\PYG{c+c1}{\PYGZsh{} Get the list of images in the project}
+\PYG{n}{image\PYGZus{}instances} \PYG{o}{=} \PYG{n}{ImageInstanceCollection}\PYG{p}{()}
+\PYG{n}{image\PYGZus{}instances}\PYG{o}{.}\PYG{n}{project} \PYG{o}{=} \PYG{n}{arguments}\PYG{o}{.}\PYG{n}{cytomine\PYGZus{}id\PYGZus{}project}
+\PYG{n}{image\PYGZus{}instances}  \PYG{o}{=}  \PYG{n}{conn}\PYG{o}{.}\PYG{n}{fetch}\PYG{p}{(}\PYG{n}{image\PYGZus{}instances}\PYG{p}{)}
+\PYG{n}{images} \PYG{o}{=} \PYG{n}{image\PYGZus{}instances}\PYG{o}{.}\PYG{n}{data}\PYG{p}{()}
+\end{Verbatim}

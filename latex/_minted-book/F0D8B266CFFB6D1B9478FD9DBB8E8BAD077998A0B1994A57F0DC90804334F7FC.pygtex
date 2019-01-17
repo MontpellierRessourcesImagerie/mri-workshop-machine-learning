@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{c+c1}{\PYGZsh{} docker run \PYGZhy{}it \PYGZhy{}v \PYGZlt{}host\PYGZhy{}path\PYGZgt{}:\PYGZlt{}image\PYGZhy{}path\PYGZgt{} \PYGZbs{}}
+    \PYG{c+c1}{\PYGZsh{}                   \PYGZlt{}image\PYGZhy{}name\PYGZgt{} \PYGZlt{}command\PYGZgt{}}
+    \PYG{c+c1}{\PYGZsh{} For example:}
+	docker run \PYGZhy{}it \PYGZhy{}v \PYG{k}{\PYGZdl{}(}\PYG{n+nb}{pwd}\PYG{k}{)}:/fiji/data \PYG{l+s+se}{\PYGZbs{}}
+	                  baecker/separate\PYGZhy{}nuclei /bin/bash
+\end{Verbatim}

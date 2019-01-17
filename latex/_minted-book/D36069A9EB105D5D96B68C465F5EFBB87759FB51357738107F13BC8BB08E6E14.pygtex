@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{f} \PYG{o}{=} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}image\PYGZhy{}names.txt\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}w\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{image} \PYG{o+ow}{in} \PYG{n}{images}\PYG{p}{:}
+	\PYG{n}{f}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(}\PYG{n}{image}\PYG{o}{.}\PYG{n}{filename} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{f}\PYG{o}{.}\PYG{n}{close}\PYG{p}{()}
+\end{Verbatim}

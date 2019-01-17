@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{job} \PYG{o}{=} \PYG{n}{conn}\PYG{o}{.}\PYG{n}{update\PYGZus{}job\PYGZus{}status}\PYG{p}{(}\PYG{n}{job}\PYG{p}{,} \PYG{n}{status} \PYG{o}{=} \PYG{n}{job}\PYG{o}{.}\PYG{n}{RUNNING}\PYG{p}{,}
+\PYG{n}{progress} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{status\PYGZus{}comment} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Loading images...\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{baseOutputFolder} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}/dockershare/\PYGZdq{}}\PYG{p}{;}
+\PYG{n}{jobFolder} \PYG{o}{=} \PYG{n}{baseOutputFolder} \PYG{o}{+} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{job}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}/\PYGZdq{}}
+\PYG{n}{inDir} \PYG{o}{=} \PYG{n}{jobFolder} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}in\PYGZdq{}}
+\PYG{n}{outDir} \PYG{o}{=} \PYG{n}{jobFolder} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}out\PYGZdq{}}
+\PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{exists}\PYG{p}{(}\PYG{n}{inDir}\PYG{p}{):}
+    \PYG{n}{os}\PYG{o}{.}\PYG{n}{makedirs}\PYG{p}{(}\PYG{n}{inDir}\PYG{p}{)}
+\PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{exists}\PYG{p}{(}\PYG{n}{outDir}\PYG{p}{):}
+    \PYG{n}{os}\PYG{o}{.}\PYG{n}{makedirs}\PYG{p}{(}\PYG{n}{outDir}\PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{sys}
+\PYG{k+kn}{import} \PYG{n+nn}{os}
+\PYG{k+kn}{from} \PYG{n+nn}{argparse} \PYG{k+kn}{import} \PYG{n}{ArgumentParser}
+
+\PYG{n}{parser} \PYG{o}{=} \PYG{n}{ArgumentParser}\PYG{p}{(}\PYG{n}{prog}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}hello\PYGZhy{}world\PYGZhy{}with\PYGZhy{}parameter.py\PYGZdq{}}\PYG{p}{,}
+\PYG{n}{description}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Example with a parameter.\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{parser}\PYG{o}{.}\PYG{n}{add\PYGZus{}argument}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}\PYGZhy{}ij\PYGZus{}scale,\PYGZdq{}}\PYG{p}{,} \PYG{n}{dest}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}scale\PYGZdq{}}\PYG{p}{,} \PYG{n}{default}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}3\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{arguments}\PYG{p}{,} \PYG{n}{others} \PYG{o}{=} \PYG{n}{parser}\PYG{o}{.}\PYG{n}{parse\PYGZus{}known\PYGZus{}args}\PYG{p}{(}\PYG{n}{sys}\PYG{o}{.}\PYG{n}{argv}\PYG{p}{)}
+\PYG{n}{scale} \PYG{o}{=} \PYG{n}{arguments}\PYG{o}{.}\PYG{n}{scale}
+
+\PYG{n}{f} \PYG{o}{=} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}hello\PYGZhy{}world.txt\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}w\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{f}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Hello world! The scale is \PYGZsq{}} \PYG{o}{+} \PYG{n}{scale} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}.}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{f}\PYG{o}{.}\PYG{n}{close}\PYG{p}{()}
+\end{Verbatim}

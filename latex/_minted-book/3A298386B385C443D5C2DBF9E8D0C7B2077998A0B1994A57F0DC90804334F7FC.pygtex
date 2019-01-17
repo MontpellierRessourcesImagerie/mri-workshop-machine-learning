@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+docker run \PYGZhy{}v \PYGZlt{}host\PYGZus{}path\PYGZgt{}:\PYGZlt{}image\PYGZus{}path\PYGZgt{} \PYGZlt{}image\PYGZus{}name\PYGZgt{} \PYGZlt{}command\PYGZgt{}
+\end{Verbatim}

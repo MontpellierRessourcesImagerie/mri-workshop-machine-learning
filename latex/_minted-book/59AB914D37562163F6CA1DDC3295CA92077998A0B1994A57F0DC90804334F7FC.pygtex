@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Run the macro in fiji headlessly using Xvfb}
+\PYG{c+c1}{\PYGZsh{} to avoid errors due to gui dependencies.}
+
+\PYG{n+nb}{export} \PYG{n+nv}{DISPLAY}\PYG{o}{=}:1
+Xvfb \PYG{n+nv}{\PYGZdl{}DISPLAY} \PYGZhy{}auth /dev/null \PYG{p}{\PYGZam{}}
+\PYG{o}{(}
+\PYG{c+c1}{\PYGZsh{} the \PYGZsq{}(\PYGZsq{} starts a new sub shell. In this sub shell we start}
+\PYG{c+c1}{\PYGZsh{} the worker processes:}
+
+java \PYGZhy{}Xmx6000m \PYGZhy{}cp jars/ij\PYGZhy{}1.51l\PYGZhy{}SNAPSHOT.jar ij.ImageJ \PYGZhy{}headless \PYG{l+s+se}{\PYGZbs{}}
+     \PYGZhy{}\PYGZhy{}console \PYGZhy{}macro separate\PYGZus{}nuclei.ijm \PYG{l+s+se}{\PYGZbs{}}
+     \PYG{l+s+s2}{\PYGZdq{}input=}\PYG{n+nv}{\PYGZdl{}1}\PYG{l+s+s2}{, output=}\PYG{n+nv}{\PYGZdl{}2}\PYG{l+s+s2}{, scale\PYGZus{}factor=}\PYG{n+nv}{\PYGZdl{}3}\PYG{l+s+s2}{\PYGZdq{}}
+
+\PYG{n+nb}{wait} \PYG{c+c1}{\PYGZsh{} waits until all \PYGZsq{}program\PYGZsq{} processes are finished}
+\PYG{c+c1}{\PYGZsh{} this wait sees only the \PYGZsq{}program\PYGZsq{} processes, not the Xvfb process}
+\PYG{o}{)}
+\end{Verbatim}

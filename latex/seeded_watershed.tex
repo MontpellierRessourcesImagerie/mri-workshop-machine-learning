@@ -1,0 +1,8 @@
+\chapter{Seeded Watershed}
+
+Instead of using all basins, i.e. local minima, we can select a set of basins and only draw separation lines when the waters of two selected basins merge. Each of the remaining basins is just added to the first selected basin with which its water merges. That means we will get a number of objects that equals the number of initially selected basins or seeds as we call them.
+
+We can use the seeded watershed\cite{meyer_morphological_1990} for a manual procedure in which the user selects a point for each object instead of drawing a contour around the object. If we determine the seeds automatically the problem dividing touching objects reduces to the problem of finding the right seeds, exactly one inside of each object. We can use the original image, in the gradient magnitude image or a distance map of the thresholded image to find seed points for the watershed.
+
+If we want to separate cells from each other in images in which the cytoplasm is stained and we have another image in which the nuclei are stained, we can use the segmented nuclei as seeds for the watershed on the cytoplasm image.
+

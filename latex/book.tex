@@ -1,0 +1,52 @@
+\documentclass{book}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlepic}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{alltt}
+\usepackage{fancyhdr}
+\usepackage{minted}
+\usepackage{exercise}
+\usepackage{mathtools} 
+\usepackage{csquotes}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\graphicspath{{./pics/}}
+\setcounter{tocdepth}{4}
+\renewcommand{\headheight}{0.6in}
+\setlength{\headwidth}{\textwidth}
+
+\fancyhead[L]{ % left
+   \includegraphics[height=0.53in]{logo}
+}
+\pagestyle{fancy}
+
+\begin{document}
+
+\title{Machine learning for bio-image analysis}
+
+\author{Cedric Hassen Khodja \and Jean-Bernardand Fiche \and  Volker Baecker \\ \small Montpellier Ressources Imagerie}
+
+\date{17.01.2019}
+
+\titlepic{
+    \includegraphics[width=\textwidth, height=3.2in]{title}
+    }
+
+\maketitle
+\tableofcontents
+\listoffigures
+\input{introduction.tex}
+\input{introduction-machine-learning}
+%\input{recall-classical-bio-image-analysis}
+%\input{pixel-classification}
+%\input{object-classification}
+%\input{object-counting}
+%\input{special applications}
+
+\bibliographystyle{plain}
+\bibliography{workshop}
+\end{document}
