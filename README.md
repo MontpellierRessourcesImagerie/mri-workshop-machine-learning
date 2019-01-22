@@ -1,1 +1,3 @@
-# mri-workshop-advanced-segmentation
+
+# Workshop: Bioimage analysis applications based on machine learning
+
