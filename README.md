@@ -29,3 +29,11 @@
     * Materials
       * [Formation_Deep_Learning_07062019_Part_1.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Support%20formation/Formation_Deep_Learning_07062019_Part_1.pdf)
       * [Formation_Deep_Learning_07062019_Part_2.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Support%20formation/Formation_Deep_Learning_07062019_Part_2.pdf)
+      * [Clusterization_linearly_separated.ipynb](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Support%20formation/Programmes%20formations/Part%201/Clusterization_linearly_separated.ipynb)
+      * [Clusterization_not_linearly_separated_parabole.ipynb](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Support%20formation/Programmes%20formations/Part%201/Clusterization_not_linearly_separated_parabole.ipynb)
+      * [Clusterization_not_linearly_separated_spiral.ipynb](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Support%20formation/Programmes%20formations/Part%201/Clusterization_not_linearly_separated_spiral.ipynb)
+      * [MNIST_convNet.ipynb](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Support%20formation/Programmes%20formations/Part%202/MNIST/MNIST_convNet.ipynb)
+      * [RBC_image_classification_VGG16.ipynb](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Support%20formation/Programmes%20formations/Part%202/RBC%20classificatio/RBC_image_classification_VGG16.ipynb)
+      * [RBC_image_classification_no_image_augmentation.ipynb](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Support%20formation/Programmes%20formations/Part%202/RBC%20classification/RBC_image_classification_no_image_augmentation.ipynb)
+      * [RBC_image_classification_with_image_augmentation.ipynb](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Support%20formation/Programmes%20formations/Part%202/RBC%20classification/RBC_image_classification_with_image_augmentation.ipynb)
+      
