@@ -1,0 +1,40 @@
+\documentclass{book}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlepic}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{alltt}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{enumerate}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{{./pics/}}
+
+\renewcommand{\labelenumi}{\alph{enumi})}
+ 
+\renewcommand{\headheight}{0.6in}
+\setlength{\headwidth}{\textwidth}
+
+\fancyhead[L]{ % left
+   \includegraphics[height=0.53in]{mri2}
+}
+\pagestyle{fancy}
+
+\begin{document}
+\title{Exercises: Machine Learning for Bio-Image-Analysis}
+\titlepic{
+    \includegraphics[width=8cm]{title_image}
+    }
+\author{Volker Baecker, Cedric Hassen Khodja, Jean-Bernard Fiche, Francesco Pedaci\\Montpellier RIO Imaging}
+\date{6.6.2019}
+\maketitle
+\tableofcontents
+\listoffigures
+\input{introduction.tex}
+\input{clustering.tex}
+\bibliographystyle{plain}
+\bibliography{exercises}
+\end{document}

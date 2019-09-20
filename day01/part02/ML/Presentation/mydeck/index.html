@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introduction to Support Vector Machines &amp; Random Forest</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to Support Vector Machines &amp; Random Forest">
+  <meta name="author" content="Cédric Hassen-Khodja, Volker Baecker, Jean-Bernard Fiche, Francesco Pedaci">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="./frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="./frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="./frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="./highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="./widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="./frameworks/io2012/js/slides" 
+    src="./frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Introduction to Support Vector Machines &amp; Random Forest</h1>
+    <h2>Supervised learning</h2>
+    <p>Cédric Hassen-Khodja, Volker Baecker, Jean-Bernard Fiche, Francesco Pedaci<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><b> History of SVM </b></li>
+<li>Types Of Machine Learning</li>
+<li>Why support vector machine ?</li>
+<li>What is support vector machine ?</li>
+<li>How does it work ?<br>
+a. Hard Margin<br>
+b. Soft Margin
+c. Kernel trick<br></li>
+<li>SVM in practice - Implementing biological application with Python<br>
+a. Use Case - Problem Statement<br>
+b. Use Case - Translocation Activity</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>History of SVM</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><span style="color:#ee7600">1963</span>: Linear classifier - Maximal Margin Classifier by Vapnik and     Chervonenkis.</li>
+<li><span style="color:#ee7600">1992</span>: Nonlinear classification – Kernel trick by Bernhard E. Boser.</li>
+<li><span style="color:#ee7600">1995</span>: The Soft Margin Classifier by Corinna Cortes and Vapnik.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Types of Machine Learning</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Why support vector machine ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>It works really well with clear margin of separation.</li>
+<li>It is effective in high dimensional spaces.</li>
+<li>Robust against the outliers (controlled with the parameter C).</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>What is support vector machine ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Support vector machines (SVMs) aim to find a decision <span style="color:#ee7600">hyperplane</span> that separates data points of different classes with a <span style="color:#ee7600">maximal margin</span>.</p>
+
+<p><img src="./Kernel_Machine.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>How does it work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>We are given a set of people with different:</p>
+
+<table><thead>
+<tr>
+<th>Height</th>
+<th>Weight</th>
+<th>Sex</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>145</td>
+<td>55</td>
+<td>Woman</td>
+</tr>
+<tr>
+<td>155</td>
+<td>50</td>
+<td>Woman</td>
+</tr>
+<tr>
+<td>160</td>
+<td>52</td>
+<td>Woman</td>
+</tr>
+<tr>
+<td>158</td>
+<td>68</td>
+<td>Woman</td>
+</tr>
+<tr>
+<td>174</td>
+<td>74</td>
+<td>Man</td>
+</tr>
+<tr>
+<td>170</td>
+<td>86</td>
+<td>Man</td>
+</tr>
+<tr>
+<td>180</td>
+<td>62</td>
+<td>Man</td>
+</tr>
+<tr>
+<td>185</td>
+<td>78</td>
+<td>Man</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>How does it work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./plot_SVM.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>How does it work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Hard Margin</h3>
+
+<p>To separate the two classes we should split the data in the best possible way.
+<img src="./plot_SVM_2.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>How does it work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Hard Margin</h3>
+
+<p><img src="./plot_SVM_3.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>How does it work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Hard Margin</h3>
+
+<p>Prediction</p>
+
+<div style='float:left;width:48%;' class='centered'>
+  <p><img src="./plot_SVM_4.png" alt=""></p>
+
+</div>
+<div style='float:right;width:48%;'>
+  <p><img src="./plot_SVM_5.png" alt=""></p>
+
+</div>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>History of SVM</li>
+<li>Types Of Machine Learning</li>
+<li>Why support vector machine ?</li>
+<li>What is support vector machine ?</li>
+<li><b> How does it work ? </b><br>
+a. Hard Margin<br>
+b. <b> Soft Margin </b><br>
+c. Kernel trick<br></li>
+<li>SVM in practice - Implementing biological application with Python<br>
+a. Use Case - Problem Statement<br>
+b. Use Case - Translocation Activity</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>How does it work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Soft Margin</h3>
+
+<p><img src="./plot_SVM_10.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>How does it work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Soft Margin</h3>
+
+<p><img src="./plot_SVM_9.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>History of SVM</li>
+<li>Type Of Machine Learning</li>
+<li>Why support vector machine ?</li>
+<li>What is support vector machine ?</li>
+<li><b> How does it work ? </b><br>
+a. Hard Margin<br>
+b. Soft Margin<br>
+c. <b> Kernel trick </b><br></li>
+<li>SVM in practice - Implementing biological application with Python<br>
+a. Use Case - Problem Statement<br>
+b. Use Case - Translocation Activity</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>How does it work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Kernel trick</h3>
+
+<p>How to perform SVM for this type of dataset ?</p>
+
+<p><img src="./plot_SVM_11.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>How does it work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Kernel trick</h3>
+
+<p><img src="./plot_SVM_13.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>History of SVM</li>
+<li>Type Of Machine Learning</li>
+<li>Why support vector machine ?</li>
+<li>What is support vector machine ?</li>
+<li>How does it work ?<br>
+a. Hard Margin<br>
+b. Soft Margin<br>
+c. Kernel trick<br></li>
+<li><b> SVM in practice - Implementing biological application with Python </b><br>
+a. <b> Use Case - Problem Statement </b><br>
+b. Use Case - Translocation Activity</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>SVM in practice - Implementing biological application with Python</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Use Case - Problem Statement</h3>
+
+<p>Estimate the lowest dose necessary to induce the cytoplasm to nucleus translocation of the 
+FKHR-EGFP in U2OS (osteosarcoma cell line). Channel 1 = FKHR-GFP; Channel 2 = DNA</p>
+
+<p><img src="./workflow.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="667.648px" height="366px" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>SVM in practice - Implementing biological application with Python</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Use Case - Translocation Activity</h3>
+
+<p><img src="./step_by_step.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h3>Use Case - Translocation Activity</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>\[
+\]
+\(Accuracy = (\frac{Count True}{Count Total})*100\)
+\[
+\]
+\(Error Rate = (\frac{Count False}{Count Total})*100\)
+\[
+\]
+\(Error Rate = 1 - Accuracy\)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h3>Use Case - Translocation Activity</h3>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./step_by_step_2.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><b> History of Random Forest </b></li>
+<li>Types Of Machine Learning</li>
+<li>Why Random Forest ?</li>
+<li>What is Random Forest ?</li>
+<li>Decision Tree</li>
+<li>How Does a decision tree work ?</li>
+<li>How Does a random forest work ?</li>
+<li>RF in practice - Implementing biological application with Python<br>
+a. Use Case - Problem Statement<br>
+b. Use Case - Translocation Activity</li>
+<li>Machine Learning in Bioimage analysis</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>History of Random Forest</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><span style="color:#ee7600">1997</span>: In an important paper on written character recognition, Amit and Geman define a large number of geometric features and search over a random selection of these for the best split at each node.</li>
+<li><span style="color:#ee7600">1998</span>: Ho has written a number of papers on &quot;the random subspace&quot; method which does a random selection of a subset of features to use to grow each tree.</li>
+<li><span style="color:#ee7600">2001</span>: The introduction of random forests proper was first made in a paper by Leo Breiman. This paper describes a method of building a forest of uncorrelated trees using a CART like procedure, combined with randomized node optimization and bagging.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>Types of Machine Learning</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Why Random Forest ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><b>No Overfitting</b>:    </p>
+
+<ul>
+<li>Number of trees increase</li>
+<li>Training time is less<br></li>
+</ul>
+
+<p><b>High Accuracy</b>:</p>
+
+<ul>
+<li>Run efficiently on large database</li>
+</ul>
+
+<p><b>Missing data</b>:</p>
+
+<ul>
+<li>Accuracy when large proportion of data is missing</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2>What is Random Forest ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p> Random Forest creates multiple Decision Trees during training phase.    
+The Decision of the majority of the trees is chosen by the random forest as the final decision. </p>
+
+<p><img src="./what_RF.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="1061px" height="388.443px" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>History of Random Forest</li>
+<li>Types Of Machine Learning</li>
+<li>Why Random Forest ?</li>
+<li>What is Random Forest ?</li>
+<li><b> Decision Tree </b></li>
+<li>How Does a decision tree work ?</li>
+<li>How Does a random forest work ?</li>
+<li>RF in practice - Implementing biological application with Python<br>
+a. Use Case - Problem Statement<br>
+b. Use Case - Translocation Activity</li>
+<li>Machine Learning in Bioimage analysis</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  <hgroup>
+    <h2>Decision Tree</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Decision Tree is a tree shaped diagram. Each branch of the tree is an action 
+and each node as a result of the decision taken.</p>
+
+<p><img src="./DT_1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="385.577px" height="500px" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h2>Decision Tree</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_2.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="953.289px" height="600px" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>Decision Tree</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_3.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="1066px" height="260.140px" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h2>Decision Tree</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_4.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="1066px" height="531.235px" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>Decision Tree</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Calculate entropy</h3>
+
+<p>\[Entropy = -\sum P(X)logp(X) \] where p(x) is a fraction of a given class</p>
+
+<p>\[ P_{lemon} = \frac{3}6 = 0.5\]
+\[ P_{apple} = \frac{3}6 = 0.5\]
+\[ E_1 = - \sum P_{lemon}log_2(P_{lemon}) + P_{apple}log_2(P_{apple}) \]
+\[ E_1 = - (-0.5 + (-0.5)) = 1\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-33" style="background:;">
+  <hgroup>
+    <h2>Decision Tree</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Calculate entropy</h3>
+
+<p>\[ P_{lemon} = \frac{1}3 = 0.334\]
+\[ P_{apple} = \frac{2}3 = 0.667\]
+\[E_{left} = - (0.334 log_2(0.334) + 0.667 log_2(0.667)) = -(-0.52+ (-0.38)) = 0.9\]
+\[E_{right} = - (0.334 log_2(0.334) + 0.667 log_2(0.667)) = -(-0.52+ (-0.38)) = 0.9\]</p>
+
+<p>\[E_2 = \frac{n classes in left child node}{n total classes in parent node}*E_{left} + \frac{n classes in right child node}{n total classes in parent node}*E_{right}\]
+\[E_2 = \frac{3}6 * 0.9 + \frac{3}6 * 0.9 = 0.9\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-34" style="background:;">
+  <hgroup>
+    <h2>Decision Tree</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_5.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="920.956px" height="573.500px" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>Decision Tree</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_6.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="1005.65px" height="520px" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-36" style="background:;">
+  <hgroup>
+    <h2>Decision Tree</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Information Gain</h3>
+
+<p>\[Informationgain = E_{parent} - [weightes average] * E_{children}\]
+\[Information gain = E_1 - E_2 = 1-0.9 = 0.10\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-37" style="background:;">
+  <hgroup>
+    <h2>Decision Tree</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_26.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-38" style="background:;">
+  <hgroup>
+    <h2>Decision Tree</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_7.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-39" style="background:;">
+  <hgroup>
+    <h2>How Does a decision tree work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_10.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-40" style="background:;">
+  <hgroup>
+    <h2>How Does a decision tree work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_11.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-41" style="background:;">
+  <hgroup>
+    <h2>How Does a decision tree work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_12.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-42" style="background:;">
+  <hgroup>
+    <h2>How Does a decision tree work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_14.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-43" style="background:;">
+  <hgroup>
+    <h2>How Does a decision tree work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_15.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-44" style="background:;">
+  <hgroup>
+    <h2>How Does a decision tree work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_16.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-45" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>History of Random Forest</li>
+<li>Types Of Machine Learning</li>
+<li>Why Random Forest ?</li>
+<li>What is Random Forest ?</li>
+<li>Decision Tree</li>
+<li>How Does a decision tree work ?</li>
+<li><b> How Does a random forest work ? </b></li>
+<li>RF in practice - Implementing biological application with Python<br>
+a. Use Case - Problem Statement<br>
+b. Use Case - Translocation Activity</li>
+<li>Machine Learning in Bioimage analysis</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-46" style="background:;">
+  <hgroup>
+    <h2>How Does a random forest work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_17.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-47" style="background:;">
+  <hgroup>
+    <h2>How Does a random forest work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_18.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-48" style="background:;">
+  <hgroup>
+    <h2>How Does a random forest work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_19.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-49" style="background:;">
+  <hgroup>
+    <h2>How Does a random forest work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_20.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-50" style="background:;">
+  <hgroup>
+    <h2>How Does a random forest work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_21.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-51" style="background:;">
+  <hgroup>
+    <h2>How Does a random forest work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_24.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-52" style="background:;">
+  <hgroup>
+    <h2>How Does a random forest work ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./DT_25.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-53" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>History of Random Forest</li>
+<li>Types Of Machine Learning</li>
+<li>Why Random Forest ?</li>
+<li>What is Random Forest ?</li>
+<li>Decision Tree</li>
+<li>How Does a decision tree work ?</li>
+<li>How Does a random forest work ?</li>
+<li><b> RF in practice - Implementing biological application with Python </b><br>
+a. <b> Use Case - Problem Statement </b><br>
+b. Use Case - Translocation Activity</li>
+<li>Machine Learning in Bioimage analysis</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-54" style="background:;">
+  <hgroup>
+    <h2>RF in practice - Implementing biological application with Python</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Use Case - Problem Statement</h3>
+
+<p>Estimate the lowest dose necessary to induce the cytoplasm to nucleus translocation of the 
+FKHR-EGFP in U2OS (osteosarcoma cell line). Channel 1 = FKHR-GFP; Channel 2 = DNA</p>
+
+<p><img src="./workflow.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="667.648px" height="366px" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-55" style="background:;">
+  <hgroup>
+    <h2>RF in practice - Implementing biological application with Python</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Use Case - Translocation Activity</h3>
+
+<p><img src="./step_by_step_3.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-56" style="background:;">
+  <hgroup>
+    <h2>Machine Learning in Bioimage analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./pipelineML.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-57" style="background:;">
+  <hgroup>
+    <h2>Machine Learning in Bioimage analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./classification_supervised.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-58" style="background:;">
+  <hgroup>
+    <h2>Machine Learning in Bioimage analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./implementing_optimization_ML.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Summary'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='History of SVM'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Types of Machine Learning'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Why support vector machine ?'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='What is support vector machine ?'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='How does it work ?'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='How does it work ?'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='How does it work ?'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='How does it work ?'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='How does it work ?'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Summary'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='How does it work ?'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='How does it work ?'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Summary'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='How does it work ?'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='How does it work ?'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Summary'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='SVM in practice - Implementing biological application with Python'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='SVM in practice - Implementing biological application with Python'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Use Case - Translocation Activity'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Use Case - Translocation Activity'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Summary'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='History of Random Forest'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Types of Machine Learning'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Why Random Forest ?'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='What is Random Forest ?'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Summary'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Decision Tree'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Decision Tree'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Decision Tree'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Decision Tree'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Decision Tree'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Decision Tree'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Decision Tree'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Decision Tree'>
+         35
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=36 title='Decision Tree'>
+         36
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=37 title='Decision Tree'>
+         37
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=38 title='Decision Tree'>
+         38
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=39 title='How Does a decision tree work ?'>
+         39
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=40 title='How Does a decision tree work ?'>
+         40
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=41 title='How Does a decision tree work ?'>
+         41
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=42 title='How Does a decision tree work ?'>
+         42
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=43 title='How Does a decision tree work ?'>
+         43
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=44 title='How Does a decision tree work ?'>
+         44
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=45 title='Summary'>
+         45
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=46 title='How Does a random forest work ?'>
+         46
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=47 title='How Does a random forest work ?'>
+         47
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=48 title='How Does a random forest work ?'>
+         48
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=49 title='How Does a random forest work ?'>
+         49
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=50 title='How Does a random forest work ?'>
+         50
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=51 title='How Does a random forest work ?'>
+         51
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=52 title='How Does a random forest work ?'>
+         52
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=53 title='Summary'>
+         53
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=54 title='RF in practice - Implementing biological application with Python'>
+         54
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=55 title='RF in practice - Implementing biological application with Python'>
+         55
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=56 title='Machine Learning in Bioimage analysis'>
+         56
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=57 title='Machine Learning in Bioimage analysis'>
+         57
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=58 title='Machine Learning in Bioimage analysis'>
+         58
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="./widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="./highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

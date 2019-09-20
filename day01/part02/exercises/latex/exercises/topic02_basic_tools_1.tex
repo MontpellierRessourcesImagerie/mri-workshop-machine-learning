@@ -1,0 +1,337 @@
+\chapter{Basic Tools 1}
+
+The ImageJ-launcher window consists of three parts. A menu-bar, a toolbar and a status-bar. You
+will now get to know the basic tools of ImageJ in more detail.
+
+\section{Pixel information, zooming and scrolling}
+
+Open the image \texttt{A4 dapi 1.tif} from the folder \texttt{01 - opening images}.
+
+\begin{itemize}
+\item Note that some information about the image is displayed at the top of the image-window. The size of the image in pixel, the type and the size of the image in the memory of the computer.
+\item Select the magnifying glass tool on the toolbar and click into the image. A left-click does a zoom-in, a right-click a zoom-out. You can use the ``+'' and ``-'' keys on the keyboard to do the zooming.
+\item Note the position-indicator in the upper-left corner, when the image is bigger than the window.
+\item Zoom-in so that the position-indicator appears. Select the scrolling-tool on the toolbar. Click in the image and without releasing the button move the mouse. Go to the lower-right corner of the image.
+\item Select the magnifying glass tool again. Zoom-in so that the position-indicator appears. You can drag the image by holding down the space-bar instead of using the scrolling-tool. The advantage is that another tool can be active in the same time. Try to scroll to the lower left corner.
+\item Zoom in to the maximum zoom and move the mouse over the image. Look at the status-bar of the ImageJ-launcher window. The position of the pixel under the mouse-pointer and its grey-value are displayed.
+\end{itemize}
+
+\begin{enumerate}
+
+\item What is the maximal possible zoom? What is the minimal zoom?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item What is the grey-value of the pixel with the coordinates x=549 and y=305? What is the grey-value of the pixel with the coordinates x=58 and y=246?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item What is the width and height of the image? What is its type? What is its size in the memory?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item Move the mouse over the image. In which direction does the x-coordinates of the pixels become bigger. In which direction does the y-coordinates become bigger? How does the coordinate-system look like?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item You can change the orientation of the y-axis. Open the dialog \texttt{Analyse>Set Measurements...} and select \texttt{Invert Y coordinates}. Move the mouse over the image again. How did the coordinate-system change?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\end{enumerate}
+
+\section{Area selection tools}
+
+Make sure that the rectangular selection tool is active. You can now make a rectangular selection in the image by clicking at a point and dragging the mouse. While doing this the width and the height of the selection are displayed. Once you release the mouse button you made a selection on the image. You can still change its position by clicking into it and dragging and its size by using the handles.
+
+\begin{enumerate}
+\item Make a rectangular selection on the image. Move it around. Change its size. Find out in the ImageJ documentation (ImageJ User Guide) which modifier keys exist for the rectangular selection tool and what they do. Try them.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Note that you can create complex selections by using the \texttt{shift} and the \texttt{alt} key. \texttt{Shift} adds to a selection, \texttt{alt} removes from a selection. Try it. Move the complex selection around. Note that you create \textit{one} selection, even if the parts may be separated.
+\item Change the selection color to magenta (\texttt{Edit>Options>Colors...}).
+\item Right-click on the rectangular-selection tool-button and select the rounded-rectangle-tool. Make a selection. You can change its color and style by double-clicking on the tool-button.
+\item Double-click on the rounded-rectangle-tool-button. Change the value of the corner-arc size and draw a new selection.
+\item Try the other area-selection tools up to and including the freehand-selection tool. Note that when using the freehand-selection tool you should not try to close it yourself. Just go near to the beginning and release the mouse button. The selection will be closed automatically.
+\item Make a selection and run the command \texttt{Image>Crop}. What happens?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+You can reload the original image using \texttt{File>Revert} (\texttt{ctrl+r}). Make a selection again and
+run the command \texttt{Image>Duplicate} (\texttt{shift+d}). What happens?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+\end{enumerate}
+
+\section{Measuring and the results table}
+
+The command \texttt{Analyze>Measure} (\texttt{m}) measures either properties of the whole image or of the selection on the image, if there is one. With the dialog under \texttt{Analyze>Set Measurements} you can choose which properties will be measured. Measurements are written into the global results table.
+
+\begin{enumerate}
+\item Use the freehand-selection to select a nucleus, then measure its area and mean gray-value. Do the same thing for multiple nuclei. Zoom into the image to make a precise selection.
+
+\item Call \texttt{File>Duplicate} from the results table to make a copy of the results. Measure a new selection. To which table is it added?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item Use \texttt{File>Rename} and rename the original results table (\texttt{Results}) to ``old''. Make a new measure. Into which results table is it added?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item Clear the results table using \texttt{Results>Clear Results} and measure at least 3 nuclei again. What is the mean, the standard-deviation, the min, the max and the mode of the distribution of the area-values? Use \texttt{Results>Summarize} and \texttt{Results>Distribution...} to get the answers.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+
+\end{enumerate}
+
+\section{Line selection tools}
+
+Try the line selection tools straight-line, segmented-line and freehand-line. Note that while creating the line for the straight-line and segmented-line the length of the current segment and the angle with the x-axis are displayed in 
+the status-bar.
+
+\begin{enumerate}
+\item Use the straight-line tool to estimate the distances between the centers of the nuclei.
+\item Use the straight-line tool to estimate the diameters of the nuclei.
+\item Use the segmented line tool to estimate the perimeters of the nuclei.
+\item Use the freehand-line tool to estimate the perimeters of the nuclei.
+\item Use the angle tool to estimate the angles between three nuclei.
+\end{enumerate}
+
+\section{Profile plots}
+
+You can use the line selection tools to create profile plots. A profile plot contains the intensity values along the line. First make a line selection across a nucleus, then press the key \texttt{k} (the shortcut for \texttt{Analyze->Plot profile}). Note that, when the line width is bigger than one, the profile will be averaged over the width. You can change the line-width by double-clicking on the line-selection tool-button.
+
+\begin{enumerate}
+\item Use a profile plot to estimate the diameter of a nucleus. Note that the plot is an image itself so that you can use ImageJ tools on the plot. Is there an advantage of using the profile plot rather than measuring the diameter in the original image?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Create a profile plot across a nucleus. Without changing the selection, change the line-width
+and create a new plot. What has changed?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Create a profile plot across a nucleus, then make the line longer and create another profile plot (The easiest way to do this without changing the direction is using a horizontal or vertical line with \texttt{shift} pressed.). What is the difference between the plots? Measure the distances between the same two interesting points in the two plots. Do you get the same result in the two plots? How is this possible? - Hint: Look at the pixel width and height in the properties of the two plot images (\texttt{Image>Properties...}).	
+	
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+
+\item Create a profile plot across a nucleus. Click the List button on the profile window. Copy the values into the clipboard (\texttt{ctrl+a} to select all and \texttt{ctrl+c} to copy). Open the \textit{Curve Fitter} from \texttt{Analyze>Tools>Curve Fitting...}. Delete the values in the curve fitter and paste the values from the clipboard into it (\texttt{ctrl+v}). Make a gaussian-fit of the measurement-points.	
+\end{enumerate}
+
+\section{Point selections}
+
+You can use the point selection tools to manually count objects in an image. With the point selection tool use \texttt{shift} to add points or use the Multi-point tool. You can delete points using \texttt{alt}.
+
+\begin{enumerate}
+\item Make a point selection on three nuclei, then make a point somewhere in the background and make point selections on the remaining nuclei. Delete the point on the background using \texttt{alt}-click. What happens to the numeration of the points?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Save an image with a point selection somewhere in the format tif (\texttt{File>Save As>Tiff...}). Close the image and reload the saved image (\texttt{File>Open...}). What happened to the selection? Can you still modify it?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Check the option \texttt{Auto-Measure} of the point tool. What does it do? Hint: Look at the results table.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Can you use the point-selection tool with the \texttt{Auto-Measure} and \texttt{Auto-Next Slice} options to trace the yellow particle in the time series image \texttt{moving-particles.tif} from the folder \texttt{02 - basic tools}?
+\end{enumerate}
+
+\section{Thresholding and the magic wand tool}
+
+The magic wand tool allows to make a selection of connected pixels in an image. There are two different ways to determine which pixels. Either the tool selects all connected pixels with the same intensity value (eventually plus-minus a given tolerance) or it selects all thresholded pixels that are connected, i.e. all pixels with intensities bigger than a given minimum and smaller than a given maximum. The minimum (and maximum) threshold values can be set using the threshold-adjuster. You can open it from \texttt{Image>Adjust>Threshold} (\texttt{shift+t}). Switch the display-mode from \texttt{Red} to \texttt{Over/Under} and select \texttt{Dark background}.
+
+Every click with the wand-tool creates a selection. If you want to remove the selection from an
+image use \texttt{ctrl+shift+a}.
+
+\begin{enumerate}
+\item Use the wand-tool in combination with the threshold adjuster to select nuclei. Measure the nuclei. How long are the biggest and the smallest perimeters and how long are the biggest and smallest diameters?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Use the wand-tools to select all nuclei as one selection (\texttt{shift-click}). Find out what percentage of the image area is covered by nuclei. Hint – you can use \texttt{ctrl+a} to select the whole image.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\end{enumerate}
+
+\section{The roi-manager}
+
+The roi-manager is a tool that helps to work with selections. You can keep an unlimited number of
+selections and display, modify and measure them whenever you want. Commands from the roi-manager always work either on the selected rois or on all rois in the manager if none of them is selected.
+
+\begin{enumerate}
+\item Use the wand-tool to select a nucleus, then press 't' (shortcut for \texttt{add to roi-manager}, you find the roi-manager under \texttt{Analyze>Tools>ROI Manager...}.). Select the \texttt{Show All} option on the roi-manager. Select the other nuclei and them to the roi-manager.
+\item Click on one of the labels (for example 5) in the image. Note that the corresponding line in the roi-manager is selected. Modify the selection (remove a part using the freehand-selection tool with \texttt{alt} pressed). Press the \texttt{update} button in the roi-manager to make the change permanent.
+\item Select one or multiple lines in the roi-manager (you can use \texttt{ctrl/shift}) and press the measure-button. Press the deselect-button, close or clear the results-table and press the measure-button again.
+\item What does the \texttt{flatten} button do? Hint – Have a look at the image type of the resulting image.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Set the lower threshold so that the background becomes blue and there are no holes in the
+nuclei. You can create a selection from the thresholded values by using \texttt{Edit>Selection>Create Selection}. Add the roi to the roi-manager and run the \texttt{split} command. What happens?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Add the selections of all nuclei to the roi-manager. Now open the image \texttt{A4 Rhod 1.tif} from the folder \texttt{02 - basic tools}. With the newly loaded image active, deselect \texttt{Show All} from the roi-manager and select it again. Press the measure button. What happens?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\end{enumerate}
+
+\section{Measuring objects with the Particle Analyzer}
+
+Until now all selections have been created individually. The particle-analyzer allows to automatically create a selection for each object (particle) in the image, i.e for each connected region of pixels above the minimum threshold and below the maximum threshold.
+
+\begin{enumerate}
+\item Use the threshold-adjuster (\texttt{Image>Adjust>Threshold} or \texttt{shift+t}) and the particle-analyzer to add the nuclei to the roi-manager (deselect everything on the particle-analyzer except \texttt{Add to Manager}).
+\item Delete all from the roi-manager and use the particle-analyzer again. This time select the
+\texttt{Exclude on edges} option. Can you explain what this option is good for and when it should be used?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Use the particle-analyzer again. This time try to exclude objects that are too small to be
+nuclei by setting a minimum size in the dialog of the particle-analyzer.
+
+\item Use the particle-analyzer to select only nuclei that have a high circularity value. What is the value that excludes the two nuclei with the lowest circularity?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item Open the image \texttt{inclusion.tif}. Imagine that the inner and the outer white rectangles are particles. Use the particle-analyzer with and without the \texttt{Include holes} option. For this comparison deselect \texttt{Add to Manager} and select \texttt{Display results}. What is the difference?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Use the particle-analyzer to find out how many bright blobs there are in the image \texttt{blobs.gif} from the \texttt{folder 02 - basic tools}. What is the average area of the blobs?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+\end{enumerate}
+
+\section{Arrows, annotations and overlays}
+
+Images can be annotated in a non-destructive way, using overlays. Arrows and other selection can
+be added to the overlay by pressing \texttt{b} (\texttt{Image>Overlay>Add Selection}).
+
+\begin{enumerate}
+\item Use the arrow tool (right-click on the line-selection tool-button) to create to arrows that
+point to a nucleus each. Before creating the arrows, use the options of the arrow-tool to set
+the color of the arrows to magenta.
+
+\item Use the text tool to write an annotation for each arrow (nucleus one and nucleus two). Use
+\texttt{ctrl+b} to add the text to the overlay as it is or \texttt{ctrl+alt+b} to it to the overlay with different options.
+
+\item Modify the arrows. Hint: Call Use \texttt{Image>Overlay>To ROI Manager} first. Don't forget to click the \texttt{Update}-button on the roi-manager after modifying an arrow.
+
+\item Replace the text \textit{nucleus one} by another text (\textit{first nucleus}). Hint: - You can not modify the text itself. Select the text in the roi-manager, write a new text with the text-tool and press the update-button.
+
+\item Add a third annotation. Hint: Convert the selections back into an overlay, add the new
+annotation to the overlay.
+
+\item Use \texttt{Image>Overlay>Flatten} (\texttt{ctrl+shift+f}) to create an image containing the annotations that you can copy into your presentation. In this image the annotation is not an overlay or roi, but added by changing pixel values.
+
+\end{enumerate}

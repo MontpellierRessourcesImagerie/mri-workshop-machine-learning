@@ -1,0 +1,86 @@
+\chapter{Basic tools 2}
+
+One point why ImageJ is popular is that it can easily be extended by macros, scripts and plugins. In this part you will learn how to use and record macros, how to batch process images, how to install and use new plugins, how to use tool-sets and how to work with 3D images.
+
+\section{Using macros}
+
+We will use a macro from the ImageJ-website. The macro \texttt{ROI\_Color\_Coder.ijm} allows to color code the outlines of particles according to a measurement (area, intensity, perimeter, etc.)
+
+\begin{enumerate}
+\item Open the image \texttt{A4 dapi 1.tif} from the folder \texttt{01 – opening images}. Use the \texttt{Help} menu of ImageJ to open the macros web-page. Look for the macro and drag it onto the ImageJ-launcher window. The macro needs the selections in the roi-manager and the corresponding
+measurements in the results-table. Color-code the nuclei by \texttt{area}. Try again and color-code them by \texttt{roundness}. Hint: Use the menu \texttt{Macros>Run} from the macro-editor window to run the macro.
+\end{enumerate}
+
+\section{Recording macros and batch processing}
+
+With the help of the macro-recorder (\texttt{Plugins>Macros>Record...}) you can record the commands you run and create a macro from them.
+
+\begin{enumerate}
+\item Run some commands (smooth, find edges, ...) and record them with the macro-recorder. Press the \texttt{create} button to create the macro. Revert the image (\texttt{File>Revert} or \texttt{ctrl+r}) and run the macro from the macro-editor.
+
+\item Record a macro to measure the features (are, mean intensity, etc) of the nuclei in the image \texttt{A4 dapi 1.tif} from the folder \texttt{03 - basic tools 02/in}. It should contain the following steps:
+\begin{itemize}
+\item set the measurements you want to have in the result
+\item set an auto-threshold on the image
+\item run the particle-analyzer (with the \texttt{display result} option)
+\item run the command \texttt{Analyze>Label} to show which objects have been found
+
+\end{itemize}
+Apply the macro to all the images in the folder \texttt{03 - basic tools 02/in}, one after the other.
+
+\item Run the macro on the whole folder using \texttt{Process>Batch>Macro...}. Copy and paste the
+macro into the window, select the input and output folder and press \texttt{Process}. What do you
+get in the output folder? What do you get in the results-table?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\end{enumerate}
+
+\section{Using plugins}
+
+Plugins are java modules that can be used to add functionality to ImageJ. A large number of plugins concerning microscopy is available.
+
+\begin{enumerate}
+\item Install the \texttt{SIOX} plugin from the ImageJ website. Open the plugins page from
+\texttt{Help>Plugins}. Search for \texttt{SIOX} and click on the link. Drag the link \texttt{siox\_.jar} onto the ImageJ launcher. Save the plugin into the ImageJ plugins folder.
+\item Open the image \texttt{Pot104Cycle0083.jpg} and try to use the \texttt{SIOX} plugin to segment (separate from background) the plant.
+\item Create a mask using the \texttt{SIOX} plugin. From the mask create a selection
+(\texttt{Edit>Selection>Create Selection}). Put the selection onto the original image (\texttt{Edit>Selection>Restore Selection}) and control the quality of the segmentation.
+\item Measure the area of the plant.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+
+\end{enumerate}
+
+\section{Working with stacks}
+
+Stacks can either represent volume data or time series. Open the example stack \texttt{t1-head.tif} from the folder \texttt{03 - basic tools 02}. Note the slider below the image. You can use it to select the visible slice of the stack. The play and pause button next to the slider allow to start and stop the animation of the stack. A right click on the same button opens the options-dialog for the animation.
+
+\begin{enumerate}
+\item Start the animation. Change the animation speed.
+\item Try the commands \texttt{Z Project...}, \texttt{3D Project...} (select \texttt{Mean Value} as projection-method) and \texttt{Make Montage...} from the \texttt{stk} tool-button.
+\item Make one 3d-projection around the x-axis and one around the y-axis using the mean-value
+projection-method. Rename the resulting images, otherwise they will both have the same
+name, which can lead to problems. Try the commands \texttt{combine} and \texttt{concatenate} from the \texttt{stk} tool-button. Hint: - For concatenate the images must have the same size in the x and y dimensions. You can adjust the canvas size of the image using \texttt{Image>Adjust>Canvas Size...}.
+\item Try the Volume Viewer (\texttt{Plugins>3D>Volume Viewer}). Set \texttt{Volume} as mode and select a \texttt{Thermal LUT}. Zoom in, change the distance and turn the volume view around by dragging it with the mouse. 
+\item Try the ImageJ 3D Viewer. Set the resampling factor to 1 and press \texttt{ok} when you are asked if the image should be converted to 8 bit. As long as the scrolling tool is selected, you can turn the object in the image. You can zoom with the magnifying glass tool. If you loose the
+object call \texttt{View>Reset View} from the 3D viewer window.
+
+Make a freehand 2d selection across the head. Select the object from the \texttt{Select} menu and
+then call \texttt{Edit>Fill Selection}. Turn the object. What happened?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+\end{enumerate}
+

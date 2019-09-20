@@ -1,0 +1,292 @@
+\chapter{What is a digital image?}
+
+\section{How is the image represented by the computer? -- Pixels}
+
+Images can have 2 or 3 spacial dimensions, a time dimensions and a number of colour-channels. An image is a rectilinear array of point samples (pixels).
+
+\begin{enumerate}
+\item Open the image \texttt{example1.tif} from the folder \texttt{04 - what is a digital image}. Run the macro \texttt{Display\_Pixel\_Values} from ImageJ's macro web-page. 
+
+\item Zoom into the image. You should now see little homogeneous squares. Note that this is just one possible way to display the pixels. As said above we should rather think about them as point samples. Go to \texttt{Edit>Options>Appearance} and select \texttt{Interpolate Zoomed Images}. What happens?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+
+\item Are higher pixel values displayed brighter or darker than lower ones? Run \texttt{Image>Lookup Tables>Invert LUT}. What is the answer to the question now?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Save the image as text-image (\texttt{File>Save As>Text Image}). Open it with a text editor, change some values to 255 and save the modified file. Reimport the text-image into ImageJ
+(\texttt{Import>Text Image}).
+\end{enumerate}
+
+\section{How is the image represented by the computer? -- In memory image formats}
+
+ImageJ has different ways to represent images, each one with different capabilities.
+
+\begin{itemize}
+\item 8-bit -- greyvalues -- unsigned integer between 0 and 255 ($2^0-1$ -- $2^8-1$)
+\item 16-bit -- greyvalues -- unsigned integer between 0 and 65535 ($2^0-1$ -- $2^{16}-1$)
+\item 32-bit -- greyvalues -- signed floating point $\pm 3.4 * 10^{38}$; precision 6-7 decimal digits; special values like \texttt{NaN} for “Not a Number”, \texttt{Infinity} and \texttt{-Infinity}
+\item 8-bit color -- not really a type, useful to convert RGB to 8-bit and a color mapping of the
+ greyvalues (lookup-table or LUT)
+\item RGB Color -- 24bit color image, consisting of three 8-bit images, one for each component
+ red, green and blue.
+\item Hyperstacks -- allows to display overlays of an unlimited number of channels. The channels
+ are 8-, 16- or 32-bit images.
+\end{itemize}
+
+The histogram of an image shows the number of times a grey-value is present in an image for all
+grey-values. Press \texttt{h} (\texttt{Analyze>Histogram}) to display the histogram of an image.
+
+\begin{enumerate}
+\item Open the image \texttt{Hoechst.tif} from the folder \texttt{04 - what is a digital image}. Display the histogram. Use the commands from the menu \texttt{Process>Math} to add 100, subtract 100, divide by 2 and multiply by 2. Show the different histograms. Between two operations
+revert the image (\texttt{ctrl+r}). What are the values you expect for count, mean, min, max and
+mode (mode is the most frequent intensity in the image – the intensity value with the highest
+peak in the histogram).
+
+\begin{tabular}{|r|c|c|c|c|c|c|}
+   \hline 
+    & count & min & max &  mean & stdDev & mode \\
+    \hline 
+    original&&&&&& \\
+   \hline
+   +100&&&&&& \\
+   \hline
+   -100&&&&&& \\
+   \hline
+   $\times2$&&&&&& \\
+   \hline
+   $/2$&&&&&& \\
+   \hline
+\end{tabular}
+
+Press the \texttt{list} button on the histogram of the image multiplied by 2. Each second row has the value 0. Can you explain why?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Open the image \texttt{cells-16bit.tif}. Display the histogram. What is the maximum value? Hint -- the camera uses 12 bit. Note that the histogram uses 256 bins and not one count for each
+grey-value. Press the list button to see the start values of the bins.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item What would you have to do in order to make the image in b) use the full range of available
+grey-values?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+Apply your calculation using \texttt{Process>Math>Macro...} and look at the histogram again.
+
+\item Open the image \texttt{Hoechst.tif} and convert it into a 32bit image (\texttt{Image>Type>32-bit}). Look at the histogram. Multiply the image by 2 and look at the histogram again. Divide the image by zero. What is the result? Multiply it by -1. What are the pixel values now? Divide it by \texttt{Infinity}.
+
+\item {\color{blue}  (OPTIONAL)} Revert the image \texttt{Hoechst.tif} and convert it to 32 bit again. Divide it by 255. What is the maximum now? Add $1e+38$ (i.e. $1*10^{38}$). What is the maximum? Multiply by 10. What happens?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Open the image \texttt{7P7.JPG}. Move the mouse over the image and look at the statusbar. You should see three values for each pixel for the components red, green and blue. Open the
+histogram by pressing \texttt{h} (\texttt{Analyze>Histogram}). Press the \texttt{RGB} button multiple times. What does it do?	
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item How does colours on the screen mix? Create a new hyperstack with 3 channels, 1 slice and 1
+frame. Use type 8-bit and mode Color. Create a filled circle on each channel then open the
+channels tool and switch to \texttt{Composite} mode. Hint: To create a filled circle, make a circular selection, select white as foreground color using the color-picker tool and call \texttt{Edit>Fill}. What color do you obtain from mixing red and blue, blue and green, green and red? What color do you obtain from mixing red, green and blue?
+
+\begin{tabular}{|lcp{2cm}|}
+   \hline 
+    red and blue & = & \\
+    \hline 
+ 	blue and green & = & \\
+   \hline
+	green and red & = & \\
+   \hline
+	red, green and blue & = & \\
+   \hline
+\end{tabular}
+
+\end{enumerate}
+
+\section{How is the image represented by the computer? -- Conversion traps}
+
+When converting between image formats you need to be careful in order not to loose information or to create artefacts. You should always keep a copy of your unmodified images.
+
+\begin{enumerate}
+\item Open the image \texttt{cells-16bit.tif}. Make a copy (\texttt{shift+d}) and multiply it by 10. Measure the mean and total intensity in the two images. Convert the images to 8bit and measure again. What is the ratio of the intensities in the two images before and after the conversion? What does a person that only knows the 8 bit versions conclude? Can you explain what happened?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Switch the scaling when doing conversions off (\texttt{Edit>Options>Conversions}). Convert the image again from 16 bit to 8 bit. What happens. Subtract the minimum value before doing
+the conversion. What happens now? Switch the scaling on again.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Open the image \texttt{ophrys.tif}. Make two copies of the image \texttt{ophrys-1.tif} and \texttt{ophrys-2.tif}. Convert \texttt{ophrys-1.tif} to 8 bit using \texttt{Image>Type>8-bit}. Under \texttt{Edit>Options>Conversions} switch \texttt{weighted RGB conversions} on (or off if it was on before). Compare the intensities of the pixel (160, 350) in the two images.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+
+\end{enumerate}
+
+\section{How is the image represented by the computer? -- On disc image formats}
+
+Different file formats for storing images exist. They differ in the way the data and metadata are
+organized. Some formats use compression (lossless or lossy) others do not. In scientific image
+processing lossy compression should generally be avoided, if there is not a very good reason in a
+special case to use it.
+
+Some common formats are:
+
+\begin{itemize}
+\item tiff -- tagged image file format -- (c) Adobe - lossless, metadata -- the format ImageJ prefers
+\item jpeg exif -- Joint Photographic Experts Group (ISO) Exchangeable image file format -- lossy data compression
+\item lsm, stk -- laser scanning microscope file - proprietary formats from Zeiss -- extensions of tiff
+\item lif -- leica image file format -- proprietary format from Leica -- can contain multiple, multidimensional images
+\end{itemize}
+
+\begin{enumerate}
+\item Load the image \texttt{nb.tif}, save it as jpeg-image and load the saved jpeg image. Zoom in and compare the two images (make sure that the option \texttt{Interpolate zoomed images} is switched off). Measure and compare the intensity in the two images.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item Use the loci-bioformats importer to read the meta-data of the image \texttt{cafe.lsm} in the folder \texttt{01 - opening images} and the metadata of one of the images in the folder \texttt{01 - opening images/arabidopsis}.
+\end{enumerate}
+
+\section{The image and the real world -- sampling and resolution}
+
+The \textit{resolution} of an optical system is the smallest distance at which two objects can still be distinguished. It is given by the Rayleigh criterion:
+
+\begin{equation}
+r=\frac{0.61*\lambda} {\textit{NA}}
+\end{equation}
+where $\lambda$ is the wavelength and $\textit{NA}$ the numerical aperture of the objective.
+
+\textit{Sampling} is the process of converting a continuous signal into a discrete sequence of numbers. A confocal microscope uses a photomultiplier to construct an image point by point with a configurable distance between the points (i.e. the samples). The size of a pixel depends on magnification of the objective and the step size. A widefield microscope uses a ccd camera in which each ccd element has a certain size and represents a certain area of the object (depending on the magnification).
+
+How dense does the samples I take have to be? The \textit{Nyquist-Shannon} sampling theorem states: \textit{``The sampling interval must not be greater than one-half the size of the smallest resolvable feature of the optical image''}. Smaller intervals lead to loss of information and aliasing artefacts, larger intervals do not add information.
+
+According to \url{http://www.svi.nl/NyquistRate} the distance between two pixels should be:
+\begin{equation}
+\Delta x \leq \frac{\lambda_{em}} {4 \cdot \textit{NA}}
+\end{equation}
+in case of a widefield microscope. $\lambda$ is the emission wavelength and the $\textit{NA}$ the numerical aperture of the objective.
+\begin{equation}
+\Delta x \leq \frac{\lambda_{ex}} {8 \cdot \textit{NA}}
+\end{equation}
+in case of a confocal microscope. $\lambda$ is the excitation wavelength in this case.
+
+The \textit{point spread function} is the way an optical system images a point (an object at the limit of the resolution). The creation of an image by an optical system can be described as a convolution between the object function (the real ideal image) and the point spread function.
+
+\begin{enumerate}
+\item Use the loci-bioformats importer to find the excitation wavelength and numerical aperture of the system that was used to take the image \texttt{cafe.lsm} from the folder \texttt{01 – opening images}. What is the optical resolution of the system? What is the sampling interval?
+
+Hints: It could be useful to copy the data into a text-editor and to use the find-command of
+the text-editor. The excitation wavelengths can be found under \texttt{IlluminationChannel}. The
+channels that are used have an entry different from 0 in the field \texttt{Aquire}. The (maximal)
+numerical aperture is a property of the objective. The sampling interval can be found under
+\texttt{VoxelSizeX} and \texttt{VoxelSizeY}.
+
+Has the image been sampled at the Nyquist-interval or is over- or under-sampled?
+
+\item Open the image \texttt{04 - what is a digital image/Bead}. This is the image of a fluorescent bead taken with a widefield microscope. Display the image in 3D using the \texttt{Volume Viewer} or the \texttt{3D-viewer}.
+
+\item Open the image \texttt{04 - what is a digital image/PSF}. This is a theoretically calculated point spread function for a widefield microscope with NA=1.4 and lambda=530nm. Use \texttt{Image>Properties} to enter the correct sampling distances (dx=64.5nm and dz=160nm). Display the image in 3D using the \texttt{Volume Viewer} or the \texttt{3D-viewer}.
+
+\item Take one slice from the middle of the psf image and convolve the image \texttt{bridge.tif} with it. You can use \texttt{Process>FFT>FD Math} to calculate the convolution. The images must have the same size. Enlarge the canvas of the psf image using \texttt{Image>Adjust>Canvas Size...}. Make a deconvolution of the result and the psf.
+
+\item Create your own 2d psf image that consists of small horizontal white line. Do the convolution and the deconvolution. What process could this psf describe?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+\end{enumerate}
+
+\section{Image and perception}
+
+When comparing colours, intensities values or object sizes visually you must be very careful. The human perception can play us tricks.
+
+\begin{enumerate}
+
+\item Open the image \texttt{Spirals.png}. How many different colours are in the image? Can you list their RGB values?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+
+\item Open the image \texttt{whites-illusion.tif}. Which grey bars are brighter, the ones on the left or the ones on the right? Measure the intensity values. Can you explain this?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+
+\item Open the image \texttt{lines.tif}. Which line is longer, the upper line or the lower line? Measure the lengths.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+
+\item Open the image \texttt{Ebbinghaus.tif}. Which central dot is larger, the left one or the right one? Use thresholding and the wand-tool to measure the areas of the two dots.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+
+\item Open the image \texttt{Kanizsas-triangle.tif}. Do you see the white triangle that is standing on its head? Use thresholding and the wand-tool to measure its area.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+\end{enumerate}

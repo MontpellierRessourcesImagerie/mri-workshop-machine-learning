@@ -1,0 +1,209 @@
+\chapter{Brightness and Contrast Adjustment}
+
+\section{Linear display-adjustments}
+
+When working with images you will often need to adjust the brightness and contrast of the displayed image in order to be able to see the interesting details. You can use the B\&C-Adjustment tool. It allows to fix a minimum and a maximum value. Values below the minimum will be displayed black, values above the maximum with the maximum value possible for the image type. The display-intensity of values between the minimum and maximum are mapped by the line defined by the two points (for example (min, 0) and (max, 255) for 8-bit images).
+
+\begin{enumerate}
+
+\item Open the image \texttt{bc-adjust.tif} from the folder \texttt{05 - brightness and contrast adjustment}. Use the B\&C-Adjustment tool (\texttt{Image>Adjust>Brightness/Contrast}) to optimise the display of the image.
+
+\item Measure the total intensity (\texttt{IntDen}) in the image (make sure \texttt{Integrated density} is selected under \texttt{Analyse>Set Measurements}). Change the brightness and measure again. Does the
+measured intensity value change?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item Measure the total intensity (\texttt{IntDen}) in the image. Change the brightness, press the \texttt{Apply}-button and measure again. Does the measured intensity value change?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item On the image \texttt{cells.tif}, press the \texttt{auto}-button multiple times. Press the \texttt{reset} button. Make a selection on the background and press the \texttt{auto}-button. Make a selection on the foreground and press the \texttt{auto}-button. What do you observe?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item Can you describe what happens to the line that maps the intensity-values in the image to the
+displayed intensity values, when you move the \texttt{Brightness}-slider and when you move the \texttt{Contrast}-slider?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+
+\item Another tool to change the contrast and brightness is the Windows/Level-Adjustment tool. Here you set the middle value and the size of the window around it. If you set the level to 15 and the window to 20, what are the corresponding min. and max. values?	
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\end{enumerate}
+
+\section{Non linear display-adjustments}
+
+In cases where very high and very low intensities should become visible, a non-linear display
+adjustment is needed, so that small values can become bigger without saturating already big values.
+
+\begin{enumerate}
+
+\item Open the image \texttt{cells.tif} from the folder \texttt{05 - brightness and contrast adjustment}. Try to use the B\&C-Adjustment tool to make the intensities in the background visible. What happens
+to the bright values in the nuclei when you do this? Use \texttt{Process>Math>Gamma} to make a non-linear adjustment. Can you make the background-intensities visible, without saturating the bright spots on the nuclei?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{2cm}
+	\end{minipage}
+	}
+	
+\item The command \texttt{Process>Math>Gamma} changes the pixel values in the image. You can use the macro-tool \texttt{GammaCorrectionTool} to modify the display using a gamma-function, without modifying the pixel values. Drag the link from the ImageJ macro-tools page onto the Image-launcher window. Press the \texttt{gamma}-button and click into the image. Drag to change the gamma value. The function is displayed on the image. Which gamma value gives a good display? Hint: Double-clicking on the \texttt{gamma}-button displays the current gamma value in the option dialog. You can get rid of the function displayed on the image with \texttt{ctrl+shift+a}.
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item Add the GammaCorrectionTool-macro to your toolsets. To do this you need to save the file into the \texttt{ImageJ/macros/toolsets} folder. The name of the file will be the name of the toolset in the toolset-menu (on the \texttt{>>} button).
+
+\end{enumerate}
+
+\section{Enhance Contrast}
+
+The enhance contrast tool, that can be found under \texttt{Process>Enhance Contrast}, has three different functions. When neither \texttt{Normalize} nor \texttt{Equalize histogram} is selected, the display is adjusted in a way, that the given number of pixels becomes saturated. In this case the intensity values in the image are not changed. When \texttt{Normalize} is selected, a contrast stretching or normalization is done. The third function is the histogram equalization.
+
+\begin{enumerate}
+
+\item Open the image \texttt{cells2.tif} from the folder \texttt{05 - brightness and contrast adjustment}. Use the histogram to find out the min. and max. intensities in the image. Set the min. and max. values for the display-adjustment to these values (you can use the set button on the B\&C-
+adjuster). Is the display appropriate?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item Run \texttt{Process>Enhance Contrast} and make sure that no option is selected. Enter 0.5\% in the
+\texttt{Saturated Pixel}-field and press \texttt{ok}. What are the min. and max. values that will be set by the tool?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+
+\item Display the histogram of the image. Run \texttt{Process>Enhance Contrast} again, but this time
+select the normalize option. Compare the histogram of the resulting image with the histogram of the original image.
+
+\item Run \texttt{Process>Enhance Contrast} again. This time select \texttt{Equalize Histogram}. Do it again, but hold down the \texttt{alt} key while pressing the \texttt{ok} button. Compare the histograms of the original image, the image after histogram-equalization and the image after histogram-equalization with the \texttt{alt} key pressed.
+
+\item OPTIONAL: Histogram-equalization calculates a normalized, cumulative histogram, i.e. each histogram value is replaced by the sum of the values up to this value and the values are normalized to the available range of greyvalues. Each greyvalue in the image is replaced by its value in the normalized, cumulative histogram.
+
+\begin{enumerate}[1]
+
+\item Write a macro that displays the cumulative histogram of the image. Hints:
+
+\begin{itemize}
+
+\item Call \texttt{Plugins>New>Macro} to create a new macro.
+\item The histogram h of the image can be calculated using the command \texttt{getRawStatistics(area, mean, min, max, std, h);}
+\item You can use a for loop to loop over the histogram-values:
+
+\begin{verbatim}
+for (i=1; i<h.length; i++) {
+}
+\end{verbatim}
+
+Within the loop you must replace the current value \texttt{h[i]} with the sum of \texttt{h[i]} and the preceding value.
+
+\item To create and show a plot, use the commands \texttt{Plot.create} and \texttt{Plot.show}. Look for the details on the Macro-Functions page of ImageJ (you can access it from the \texttt{Dev}-button on the startup-macros toolset).
+
+\end{itemize}
+\item Modify the macro to create and show the normalized cumulative histogram. The formula for the normalization is:
+
+\begin{equation}
+ ncdf(g) = round(\frac{cdf(g)-cdf_{min}}{{M}\cdot{N}-cdf_{min}} \cdot 255)
+\end{equation}
+
+where $cdf$ is the cumulative histogram, $cdf_{min}$ is the minimum value in the cumulative histogram and $M$ and $N$ are the width and height of the image.
+
+\item In addition of plotting the normalized cumulative histogram, apply the histogram-
+equalization to the image by changing the value of each pixel with its value in the $ncdf$. You can use the macro functions \texttt{getWidth()}, \texttt{getHeight()}, \texttt{getPixel()} and \texttt{setPixel()}. You can use a nested loop to loop over all pixels of the image:
+\begin{verbatim}
+for (x=0; x<width; x++) {
+  for(y=0; y<height; y++) {
+  ...
+  }
+}
+\end{verbatim}
+
+\item Modify the macro to use the $sqrt$ of the histogram values when calculating the cumulative histogram. You need to adapt the normalization step accordingly.
+
+\end{enumerate}
+
+\end{enumerate}
+
+\section{Lookup-tables}
+
+We will now change the display of our image by mapping the intensity values to colors. This is done by the use of lookup tables. A lookup table is a table that maps the 255 intensity values to 255 arbitrary colors. Colors are expressed by the proportion of the three basic colors red, green and blue.
+
+\begin{enumerate}
+
+\item Open the Control Panel from \texttt{Plugins>Utilities>Control Panel} (\texttt{ctrl+shift+u}). In the control panel go to \texttt{Image>Lookup Tables} and tear this menu off. Close the parent menu. Make sure that no image is opened. Click on the different lookup-tables. An image showing the colors for the 255 intensity values is displayed. Now open the image \texttt{cells2.tif}, do a histogram-equalization and apply the lookup-tables to it, by clicking on the lockup-tables again.
+
+\item Open the \texttt{Jet} lut. Can you tell in which color the intensity value 200 is displayed? What are the rgb-components of this color (use the list button on \texttt{Image>Color>Show Lut})?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\item The lookup table \texttt{HiLo} is useful to adjust the display of our image. 0 will be displayed in
+blue, 255 in red and values in between will be displayed in gray. Have a look at the HiLo lookup-table. Use it in combination with the b\&c-adjustment tool to optimize the display of the image \texttt{cells2.tif}.
+	
+\item Select the grey-lookup table. Use the lut-editor from \texttt{Image>Color>Edit>Lut} to create a lookup-table that displays 0 in green, 255 in yellow and the values between 100 and 120 in different shades of red, becoming lighter with higher intensity. Save the lookup-table into the lut-folder, call \texttt{Help>Refresh Menus} and apply it to the image.
+
+\end{enumerate}
+
+\section{Overlay of multiple channels}
+
+A common task in fluorescent microscopy is to create a combined image from the different channels. The task consists in creating an overlay of the different channels, in adjusting the display of each channel and eventually in transferring the settings from one overlay to another, to allow a visual comparison. In ImageJ this can be accomplished using so called hyperstacks. Hyperstacks allow to work with multidimensional images. The different dimensions are the x,y and z axis, the time and the channel (representing the color or wavelength).
+
+\begin{enumerate}
+
+\item Open the images \texttt{dapi 3.tif} and \texttt{rhod 3.tif}. Run the \texttt{Merge Channels...} command from the menu \texttt{Image>Color}. Try different lookup tables to change the colors of the two channels. Use the \texttt{Channels} tool from \texttt{Image>Color>Channel Tool...} to switch channels on and off. Use the B\&C-Adjuster to optimize the display of the two channels independently.
+
+\item Save the hyperstack as tif-image. Close it and load it again. Create an rgb-snapshot, using
+the command \texttt{Convert to RGB} from the more-button of the \texttt{Channels} tool.
+
+\item Create a second hyperstack from the images \texttt{dapi 5} and \texttt{rhod 5}. Transfer the display settings from the first hyperstack (dapi and rhod 3) to the second by using the propagate functionality of the set command on the b\&c adjuster.
+
+\item Create an overlay from the three images \texttt{b2RFP\_gemDeltaC2\_blue.tif}, \texttt{b2RFP\_gemDeltaC2\_green.tif} and \texttt{b2RFP\_gemDeltaC2\_red.tif} and adjust the display.
+
+\item Create an overlay of the images \texttt{dapi 4.tif} and \texttt{Rhod 4.tif}. Correct the alignment by using select all (\texttt{ctrl+a}), cut (\texttt{ctrl+x}) and paste (\texttt{ctrl+v}). If the rectangular-selection tool is selected you can now move the pasted channel. After the correction, crop the image to get rid of the empty area.
+
+\item Open the three images \texttt{Actine.stk}, \texttt{DAPI.stk} and \texttt{Gtub.stk}. Concatenate the three stacks with \texttt{Image>Stacks>Tools>Concatenate}. Use \texttt{Image>Hyperstacks>Stack to Hyperstack...} to
+create a composite image. Be careful to select the right order of dimensions (xyzct).
+
+\item Make a z-projection of the result of step f. What do you get?
+
+\fbox{
+	\begin{minipage}{\linewidth}
+		\hfill\vspace{1cm}
+	\end{minipage}
+	}
+	
+\end{enumerate}
