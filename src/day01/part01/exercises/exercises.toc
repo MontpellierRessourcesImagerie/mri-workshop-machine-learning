@@ -1,0 +1,7 @@
+\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Image Analysis, Features and Scalespace}{7}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}ImageJ commands you might need}{8}{subsection.1.1.1}%
+\contentsline {section}{\numberline {1.2}Machine Learning}{9}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Clustering}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}K-means clustering}{13}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Using K-means clustering for color segmentation}{14}{section.2.2}%
