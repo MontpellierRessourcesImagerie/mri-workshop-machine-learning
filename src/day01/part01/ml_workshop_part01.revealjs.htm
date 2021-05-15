@@ -370,6 +370,321 @@ sobel
 <li><p>given the training data, <br>find parameter values that minimize <br>the prediction error</p></li>
 </ul>
 </section>
+<section class="slide level2">
+
+<h4 id="machine-learning-example-1-linear-regression">Machine Learning Example 1 <br> Linear Regression</h4>
+<p><img style="float: left; margin-right: 20px; margin-bottom: 10px;" src="./pics/Femur_-_animation9.gif" width="200"></p>
+<div style="float: right; margin-left: 20px;">
+<p><small> Training Data:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Femur length (cm)</th>
+<th>Height (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>45</td>
+<td>153</td>
+</tr>
+<tr class="even">
+<td>44</td>
+<td>168</td>
+</tr>
+<tr class="odd">
+<td>44</td>
+<td>177</td>
+</tr>
+<tr class="even">
+<td>47</td>
+<td>180</td>
+</tr>
+<tr class="odd">
+<td>44</td>
+<td>171</td>
+</tr>
+<tr class="even">
+<td>50</td>
+<td>168</td>
+</tr>
+</tbody>
+</table>
+<p></small></p>
+</div>
+<p>estimate body height f(x) given the femur length x.</p>
+<p>model: f(x) = ω<sub>1</sub> + ω<sub>2</sub> × x</p>
+<p>parameter of the model: <br> ω<sub>1</sub> and ω<sub>2</sub></p>
+</section>
+<section class="slide level2">
+
+<h4 id="machine-learning-example-1-linear-regression-1">Machine Learning Example 1 <br> Linear Regression</h4>
+<p><img  style="float: right;" src="./pics/linear-regression-femur.png" width="600"></p>
+<p><small></p>
+<ul>
+<li><p>find parameters <br>ω1, ω2</p></li>
+<li><p>so that error <br>between <br>training data <br>and model <br>is minimal</p></li>
+</ul>
+<p></small></p>
+</section>
+<section class="slide level2">
+
+<h4 id="example-1---squared-loss-function">Example 1 - Squared Loss function</h4>
+<p><img src="./pics/loss_plot.png" style="float: right;" width="200"></p>
+<p><img src="./pics/linear-regression-femur.png" style="float: right;" width="200"></p>
+<p><img src="./pics/linear.png"></p>
+<p><img src="./pics/loss.png"></p>
+</section>
+<section class="slide level2">
+
+<h4 id="example-1---gradient-descent">Example 1 - Gradient descent</h4>
+<p><img src="./pics/gradient_descent.png" style="float: right;" width="400"></p>
+<ul>
+<li><p>find the minimum of <br>the loss function</p></li>
+<li><p>by using gradient <br>descent</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h4 id="example-1---predictions">Example 1 - Predictions</h4>
+<p><img src="./pics/predictions.png" style="float: right;"></p>
+<div style="text-align: left; font-size: 32px;">
+<p>f(x) = ω<sub>1</sub> + ω<sub>2</sub> × x</p>
+<p>ω<sub>1</sub> = 131.13cm</p>
+<p>ω<sub>2</sub> = 0.87</p>
+<p>f(55cm) = 131.13cm + 0.87 × 55cm</p>
+<p>f(55cm) = 179.42cm</p>
+</div>
+</section>
+<section class="slide level2">
+
+<h4 id="femur-example">Femur example</h4>
+<ul>
+<li><p>Supervised or Unsupervised?</p></li>
+<li><p>Classification or Regression?</p></li>
+</ul>
+</section>
+</section>
+<section class="slide level2">
+
+<h3 id="the-programs">The programs</h3>
+<div style="text-align: left">
+<p><img src="./pics/fiji.png" style="float: right;" width="80"></p>
+<ul>
+<li>ImageJ/FIJI</li>
+</ul>
+<p><img src="./pics/weka.png" style="float: right;" width="80"></p>
+<ul>
+<li>Weka / Labkit</li>
+</ul>
+<p><img src="./pics/ilastik.png" style="float: right;" width="80"></p>
+<ul>
+<li>Ilastik</li>
+</ul>
+<p><img src="./pics/cellprofiler.png" style="float: right;" width="80"></p>
+<ul>
+<li>Cellprofiler / CP Analyst</li>
+</ul>
+<p><img src="./pics/orbit.png" style="float: right;" width="80"></p>
+<ul>
+<li>Orbit</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<section>
+<h3 id="imagejfiji">ImageJ/FIJI</h3>
+<ul>
+<li>Demo ImageJ 01
+<ul>
+<li>Open Image</li>
+<li>Threshold</li>
+<li>Binary Watershed</li>
+<li>Compare to GT</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="imagejfiji-1">ImageJ/FIJI</h3>
+<ul>
+<li>Demo ImageJ 02
+<ul>
+<li>Revert Image</li>
+<li>Laplacian of Gaussian (scale 3)</li>
+<li>Threshold (Yen)</li>
+<li>Binary Watershed</li>
+<li>Compare to GT</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="ilastik">Ilastik</h3>
+<ul>
+<li>Demo Ilastik
+<ul>
+<li>import image(s)</li>
+<li>select features and scales</li>
+<li>name classes</li>
+<li>select training data</li>
+<li>export result</li>
+<li>batch</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="exercises-01">Exercises 01</h3>
+</section>
+</section>
+<section class="slide level2">
+
+<section>
+<h3 id="clustering">Clustering</h3>
+<ul>
+<li><p>A machine learning method</p>
+<ul>
+<li><p>Unsupervised</p></li>
+<li><p>Classification</p></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="clustering-1">Clustering</h3>
+<div style="font-size: 32px;">
+<p><img src="./pics/clustering.png" style="float: right;" width="300"></p>
+<ul>
+<li><p>Clustering</p>
+<ul>
+<li><p>Group objects in a way that</p>
+<ul>
+<li><p>objects in the same cluster are <br>more similar to each other</p></li>
+<li><p>than to objects in other clusters</p></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="clustering-algorithms">Clustering algorithms</h3>
+<ul>
+<li>K-means</li>
+<li>DBScan</li>
+<li>hierarchical clustering</li>
+<li>expectation-maximization</li>
+<li>…</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="k-means-clustering">k-means clustering</h3>
+<div style="float: right; font-size: 28px;">
+<ul>
+<li>Algorithm:
+<ul>
+<li>Start with k initial means</li>
+<li>Repeat until convergence
+<ul>
+<li>Assign feature-vectors to clusters</li>
+<li>Recalculate the means of the clusters</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div style = "float: left; font-size: 32px;" >
+<ul>
+<li><p>Partition the feature-<br>space into k-clusters</p></li>
+<li><p>Each feature-vector <br>belongs to the cluster <br>with nearest mean</p>
+<div>
+</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="k-means-example">K-means example</h3>
+<p><img src="./pics/k-means.png" width="500"></p>
+</section>
+<section class="slide level2">
+
+<h3 id="k-means-clustering-in-machine-learning">K-means clustering in <br>machine learning</h3>
+<div style="float: right; font-size: 30px;">
+<ul>
+<li><p>Classification of unknown data:</p>
+<ul>
+<li><p>calculate the feature vector</p></li>
+<li><p>assign it to the cluster <br>with the nearest mean</p></li>
+</ul></li>
+</ul>
+</div>
+<div style="float: left; font-size: 30px;">
+<ul>
+<li><p>Training phase:</p>
+<ul>
+<li><p>randomly select a number of <br>feature vectors</p>
+<ul>
+<li>for example 5% of the data</li>
+</ul></li>
+<li><p>run the k-means clustering on <br>the selected feature vectors</p></li>
+<li><p>the resulting means are the <br>classifier</p></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="classify-pixels-by-color">Classify pixels by color</h3>
+<div data-align="center">
+<div style="float: right;">
+<ul>
+<li>RGB</li>
+</ul>
+<p><img src="./pics/rgb.png"></p>
+</div>
+<div style="float: left;">
+<ul>
+<li>input image</li>
+</ul>
+<p><img src="./pics/plant.png"></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="cielab-color-space">CIEL*a*b* color-space</h3>
+<p><img src="./pics/cielab.png" style="float: right;" width="300"></p>
+<div style="font-size: 30px;">
+<ul>
+<li>CIEL<em>a</em>b* color-space
+<ul>
+<li>L = lightness</li>
+<li>a = green (-) to red (+)</li>
+<li>b = yellow (-) to blue (+) <br> <br></li>
+</ul></li>
+<li>Designed, so that
+<ul>
+<li>distances correspond to perceived <br>distances between colors.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="software">Software</h3>
+<ul>
+<li>color clustering in FIJI</li>
+<li>comes with WEKA</li>
+<li>Plugins&gt;Segmentation&gt;Color Clustering</li>
+</ul>
+<p><img src="./pics/color-clustering.png" style="float: bottom;" width="400"></p>
+</section>
+<section class="slide level2">
+
+<h3 id="exercises-02">Exercises 02</h3>
+</section>
 </section>
 
 		</div>
