@@ -4,9 +4,9 @@
 * Day 1, part 1
   * Content
     * [Introduction](./slides_day1.revealjs.htm#/1)
-    * Features and scale-space
-    * Ilastik
-    * Clustering
+    * [Features and scale-space](./slides_day1.revealjs.htm#/2/2)
+    * [Ilastik](./slides_day1.revealjs.htm#/5/2)
+    * [Clustering](./slides_day1.revealjs.htm#/6)
   * Materials 
     * [Slides day 1, part 1](./slides_day1.revealjs.htm)
     * [Exercises day 1, part 1](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day01/part01/exercises.pdf)
