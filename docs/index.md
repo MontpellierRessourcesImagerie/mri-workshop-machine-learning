@@ -8,7 +8,7 @@
     * Ilastik
     * Clustering
   * Materials 
-    * [Slides day 1, part 1](https://raw.githubusercontent.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/master/docs/slides_day1.revealjs.htm)
+    * [Slides day 1, part 1](./slides_day1.revealjs.htm)
     * [Exercises day 1, part 1](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day01/part01/exercises.pdf)
 * Day 1, part 2
   * Content
