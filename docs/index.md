@@ -10,6 +10,7 @@
   * Materials 
     * [Slides day 1, part 1](./slides_day1.revealjs.htm)
     * [Exercises day 1, part 1](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day01/part01/exercises.pdf)
+    * [images for the first part of the workshop](http://dev.mri.cnrs.fr/attachments/download/2404/images.zip)
 * Day 1, part 2
   * Content
     * Support Vector Machines
