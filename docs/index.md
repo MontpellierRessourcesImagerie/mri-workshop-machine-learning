@@ -3,7 +3,7 @@
 
 * Day 1, part 1
   * Content
-    * Introduction
+    * [Introduction](./slides_day1.revealjs.htm#/1)
     * Features and scale-space
     * Ilastik
     * Clustering
