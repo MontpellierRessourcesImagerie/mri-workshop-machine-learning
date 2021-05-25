@@ -16,5 +16,6 @@
     * [Jupyter Notebooks](https://colab.research.google.com/github/MontpellierRessourcesImagerie/python_in_an_hour/blob/master/PIAH_01_jupyter.ipynb)
     * [The Python Programming Language](https://colab.research.google.com/github/MontpellierRessourcesImagerie/python_in_an_hour/blob/master/PIAH_02_python.ipynb)
     * [Python Crash Course](https://colab.research.google.com/github/MontpellierRessourcesImagerie/python_in_an_hour/blob/master/PIAH_03_crash.ipynb)
+    * [k-means clustering in python](https://colab.research.google.com/github/MontpellierRessourcesImagerie/python_in_an_hour/blob/master/PIAH_04_cluster.ipynb)
   * Extra
     * [Deep Learning Experiment](https://github.com/MontpellierRessourcesImagerie/DL_EXP_PC/wiki)
