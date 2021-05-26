@@ -22,4 +22,4 @@
 * Day 2, part 2
   * [svm](https://drive.google.com/drive/folders/146RcSKZcMH_nt5SFaQ6EK0E0Ls444TlW?usp=sharing)
 * Day 3 
- * [Deep Learning Ex4_MNIST_dense_vs_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex4_MNIST_dense_vs_convolutional_nn.ipynb)
+  * [Deep Learning Ex4_MNIST_dense_vs_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex4_MNIST_dense_vs_convolutional_nn.ipynb)
