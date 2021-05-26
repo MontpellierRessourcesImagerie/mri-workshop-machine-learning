@@ -19,5 +19,8 @@
     * [k-means clustering in python](https://colab.research.google.com/github/MontpellierRessourcesImagerie/python_in_an_hour/blob/master/PIAH_04_cluster.ipynb)
   * Extra
     * [Deep Learning Experiment](https://github.com/MontpellierRessourcesImagerie/DL_EXP_PC/wiki)
-
+* Day 2, part 2
   * [svm](https://drive.google.com/drive/folders/146RcSKZcMH_nt5SFaQ6EK0E0Ls444TlW?usp=sharing)
+  * [Deep Learning](https://drive.google.com/drive/folders/1rCqKWt_IcfqwH13nVI32F09_2eZVPoPe?usp=sharing)
+* Day 3, part 1
+  * [Deep Learning](https://drive.google.com/drive/folders/1rCqKWt_IcfqwH13nVI32F09_2eZVPoPe?usp=sharing)
