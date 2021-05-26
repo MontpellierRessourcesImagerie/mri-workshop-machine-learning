@@ -28,3 +28,5 @@
   * [Deep Learning Ex4_MNIST_dense_vs_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex4_MNIST_dense_vs_convolutional_nn.ipynb) 
   * [Deep Learning Ex5_CIFAR_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex5_CIFAR_convolutional_nn.ipynb)
   * [Deep Learning Ex6_RBC_image_classification](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex6_RBC_image_classification.ipynb)
+  * [Deep Learning Ex7_Unet](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex7_Unet.ipynb)
+
