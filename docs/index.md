@@ -24,9 +24,14 @@
   * [Deep Learning Ex1_Clusterization_linearly_separated](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex1_Clusterization_linearly_separated.ipynb)
   * [Deep Learning Ex2_Clusterization_not_linearly_separated_parabole](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex2_Clusterization_not_linearly_separated_parabole.ipynb)
   * [Deep Learning Ex3_Clusterization_not_linearly_separated_spiral](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex3_Clusterization_not_linearly_separated_spiral.ipynb)
+  * Materials
+    * [Introduction_deep_learning_part1_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Introduction_deep_learning_part1_2021.pdf)  
+    * [Introduction_deep_learning_part2_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Introduction_deep_learning_part2_2021.pdf) 
 * Day 3 
   * [Deep Learning Ex4_MNIST_dense_vs_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex4_MNIST_dense_vs_convolutional_nn.ipynb) 
   * [Deep Learning Ex5_CIFAR_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex5_CIFAR_convolutional_nn.ipynb)
   * [Deep Learning Ex6_RBC_image_classification](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex6_RBC_image_classification.ipynb)
   * [Deep Learning Ex7_Unet](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex7_Unet.ipynb)
+  * Materials
+    * [Deep_learning_real_case_applications_part3_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Deep_learning_real_case_applications_part3_2021.pdf)  
 
