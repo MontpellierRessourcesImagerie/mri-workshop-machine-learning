@@ -21,5 +21,10 @@
     * [Deep Learning Experiment](https://github.com/MontpellierRessourcesImagerie/DL_EXP_PC/wiki)
 * Day 2, part 2
   * [svm](https://drive.google.com/drive/folders/146RcSKZcMH_nt5SFaQ6EK0E0Ls444TlW?usp=sharing)
+  * [Deep Learning Ex1_Clusterization_linearly_separated](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex1_Clusterization_linearly_separated.ipynb)
+  * [Deep Learning Ex2_Clusterization_not_linearly_separated_parabole](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex2_Clusterization_not_linearly_separated_parabole.ipynb)
+  * [Deep Learning Ex3_Clusterization_not_linearly_separated_spiral](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex3_Clusterization_not_linearly_separated_spiral.ipynb)
 * Day 3 
-  * [Deep Learning Ex4_MNIST_dense_vs_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex4_MNIST_dense_vs_convolutional_nn.ipynb)
+  * [Deep Learning Ex4_MNIST_dense_vs_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex4_MNIST_dense_vs_convolutional_nn.ipynb) 
+  * [Deep Learning Ex5_CIFAR_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex5_CIFAR_convolutional_nn.ipynb)
+  * [Deep Learning Ex6_RBC_image_classification](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex6_RBC_image_classification.ipynb)
