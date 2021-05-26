@@ -21,6 +21,7 @@
     * [Deep Learning Experiment](https://github.com/MontpellierRessourcesImagerie/DL_EXP_PC/wiki)
 * Day 2, part 2
   * [svm](https://drive.google.com/drive/folders/146RcSKZcMH_nt5SFaQ6EK0E0Ls444TlW?usp=sharing)
+* Day 2, part 3
   * [Deep Learning Ex1_Clusterization_linearly_separated](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex1_Clusterization_linearly_separated.ipynb)
   * [Deep Learning Ex2_Clusterization_not_linearly_separated_parabole](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex2_Clusterization_not_linearly_separated_parabole.ipynb)
   * [Deep Learning Ex3_Clusterization_not_linearly_separated_spiral](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex3_Clusterization_not_linearly_separated_spiral.ipynb)
@@ -33,5 +34,6 @@
   * [Deep Learning Ex7_Unet](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex7_Unet.ipynb)
   * Materials
     * [Introduction_deep_learning_part2_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Introduction_deep_learning_part2_2021.pdf) 
-    * [Deep_learning_real_case_applications_part3_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Deep_learning_real_case_applications_part3_2021.pdf)  
+    * [Deep_learning_real_case_applications_part3_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Deep_learning_real_case_applications_part3_2021.pdf)
+    * [Data for ex6 - Red Blood Cell classification](https://drive.google.com/drive/folders/1dcAE4Yu_nVAGUgUgEVok-ZUT55e39WNV?usp=sharing)
 
