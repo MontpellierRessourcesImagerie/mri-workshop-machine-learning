@@ -20,7 +20,8 @@
   * Extra
     * [Deep Learning Experiment](https://github.com/MontpellierRessourcesImagerie/DL_EXP_PC/wiki)
 * Day 2, part 2
-  * [Exercise Support Vector Machines](https://drive.google.com/drive/folders/146RcSKZcMH_nt5SFaQ6EK0E0Ls444TlW?usp=sharing)
+  * [Exercise - Support Vector Machines](https://drive.google.com/drive/folders/146RcSKZcMH_nt5SFaQ6EK0E0Ls444TlW?usp=sharing)
+  * [Exercise - Cell Profiler Analyst](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/rf/translocation-activity.pdf)
   * Material
      * [Slides - Introduction to Support Vector Machines & Random Forest](./intro.html)  
 * Day 2, part 3
