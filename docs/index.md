@@ -23,7 +23,8 @@
   * [Exercise - Support Vector Machines](https://drive.google.com/drive/folders/146RcSKZcMH_nt5SFaQ6EK0E0Ls444TlW?usp=sharing)
   * [Exercise - Cell Profiler Analyst](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/rf/translocation-activity.pdf)
   * Material
-     * [Slides - Introduction to Support Vector Machines & Random Forest](./intro.html)  
+     * [Slides - Support Vector Machines & Random Forest](./intro.html)  
+     * [Images and CP-workflow for the exercises](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/tree/master/rf/cp)
 * Day 2, part 3
   * [Deep Learning Ex1_Clusterization_linearly_separated](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex1_Clusterization_linearly_separated.ipynb)
   * [Deep Learning Ex2_Clusterization_not_linearly_separated_parabole](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex2_Clusterization_not_linearly_separated_parabole.ipynb)
