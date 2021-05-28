@@ -1,6 +1,8 @@
 
 # Workshop: Bioimage analysis applications based on machine learning
 
+<div class="begin-examples"></div>
+
 * Day 1, part 1
   * Content
     * [Introduction](./slides_day1.revealjs.htm#/1)
@@ -41,3 +43,4 @@
     * [Deep_learning_real_case_applications_part3_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Deep_learning_real_case_applications_part3_2021.pdf)
     * [Data for ex6 - Red Blood Cell classification](https://drive.google.com/drive/folders/1dcAE4Yu_nVAGUgUgEVok-ZUT55e39WNV?usp=sharing)
 
+<div class="end-examples"></div>
