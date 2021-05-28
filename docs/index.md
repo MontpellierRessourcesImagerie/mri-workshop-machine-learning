@@ -1,6 +1,10 @@
 
 # Workshop: Bioimage analysis applications based on machine learning
 
+<table>
+<tr valign="top">
+ <td>
+  
 * Day 1, part 1
   * Content
     * [Introduction](./slides_day1.revealjs.htm#/1)
@@ -19,13 +23,16 @@
     * [k-means clustering in python](https://colab.research.google.com/github/MontpellierRessourcesImagerie/python_in_an_hour/blob/master/PIAH_04_cluster.ipynb)
   * Extra
     * [Deep Learning Experiment](https://github.com/MontpellierRessourcesImagerie/DL_EXP_PC/wiki)
-
+ 
+ </td>
+ <td>
+  
 * Day 2, part 2
   * [Exercise - Support Vector Machines](https://drive.google.com/drive/folders/146RcSKZcMH_nt5SFaQ6EK0E0Ls444TlW?usp=sharing)
   * [Exercise - Cell Profiler Analyst](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/rf/translocation-activity.pdf)
   * Material
      * [Slides - Support Vector Machines & Random Forest](./intro.html)  
-     * [Images and CP-workflow for the exercises](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/tree/master/rf/cp)
+     * [Images and CP-workflow for the exercises](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/tree/master/rf/cp) 
 * Day 2, part 3
   * [DL Ex1_Clusterization_linearly_separated](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex1_Clusterization_linearly_separated.ipynb)
   * [DL Ex2_Clusterization_not_linearly_separated_parabole](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex2_Clusterization_not_linearly_separated_parabole.ipynb)
@@ -41,3 +48,7 @@
     * [Introduction_deep_learning_part2_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Introduction_deep_learning_part2_2021.pdf) 
     * [Deep_learning_real_case_applications_part3_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Deep_learning_real_case_applications_part3_2021.pdf)
     * [Data for ex6 - Red Blood Cell classification](https://drive.google.com/drive/folders/1dcAE4Yu_nVAGUgUgEVok-ZUT55e39WNV?usp=sharing)
+ 
+ </td>
+ </tr> 
+</table>
