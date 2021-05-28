@@ -1,8 +1,6 @@
 
 # Workshop: Bioimage analysis applications based on machine learning
 
-<div style="float:left">
-
 * Day 1, part 1
   * Content
     * [Introduction](./slides_day1.revealjs.htm#/1)
@@ -20,12 +18,7 @@
     * [Python Crash Course](https://colab.research.google.com/github/MontpellierRessourcesImagerie/python_in_an_hour/blob/master/PIAH_03_crash.ipynb)
     * [k-means clustering in python](https://colab.research.google.com/github/MontpellierRessourcesImagerie/python_in_an_hour/blob/master/PIAH_04_cluster.ipynb)
   * Extra
-    * [Deep Learning Experiment](https://github.com/MontpellierRessourcesImagerie/DL_EXP_PC/wiki)
- 
-</div>
-  
-<div style="float:right">
-  
+    * [Deep Learning Experiment](https://github.com/MontpellierRessourcesImagerie/DL_EXP_PC/wiki)  
 * Day 2, part 2
   * [Exercise - Support Vector Machines](https://drive.google.com/drive/folders/146RcSKZcMH_nt5SFaQ6EK0E0Ls444TlW?usp=sharing)
   * [Exercise - Cell Profiler Analyst](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/rf/translocation-activity.pdf)
@@ -47,5 +40,4 @@
     * [Introduction_deep_learning_part2_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Introduction_deep_learning_part2_2021.pdf) 
     * [Deep_learning_real_case_applications_part3_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Deep_learning_real_case_applications_part3_2021.pdf)
     * [Data for ex6 - Red Blood Cell classification](https://drive.google.com/drive/folders/1dcAE4Yu_nVAGUgUgEVok-ZUT55e39WNV?usp=sharing)
- 
-  </div>
+
