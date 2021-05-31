@@ -1,5 +1,4 @@
-
-# Workshop: Bioimage analysis applications based on machine learning
+# Workshop: <br> Bioimage analysis applications based on machine learning 
 
 <div class="begin-examples"></div>
 
