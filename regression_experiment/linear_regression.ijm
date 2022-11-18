@@ -8,6 +8,7 @@ Y = Table.getColumn(YColumn, table);
 WIDTH = 512;
 HEIGHT = 512;
 
+/*
 w = fitLine(X, Y);
 loss = meanSquaredLoss(w, X, Y);
 print("w1=" + w[0] + ", w2=" + w[1] + ", loss=" + loss);
@@ -15,9 +16,14 @@ Plot.create("Regression Line", XColumn, YColumn);
 Plot.add("cross", X, Y);
 Plot.drawLine(X[0], w[0] + (w[1] * X[0]), X[X.length-1], w[0] + (w[1] * X[X.length - 1]));
 Plot.show();
-
+*/
 lossImage(WIDTH, HEIGHT, 0.5, 0.025, X, Y);
-gradientDescent(-50, -4.8, 0.5, 0.025, 20, X, Y);
+waitForUser("Select a point!");
+Roi.getCoordinates(xpoints, ypoints);
+w1 = xpoints[0];
+w2 = ypoints[0];
+toScaled(w1, w2);
+gradientDescent(w1, w2, 0.5, 0.025, 20, X, Y);
 
 function fitLine(X, Y) {
     Array.getStatistics(X, min, max, XMean, stdDev);
