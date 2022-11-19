@@ -12,5 +12,7 @@ for (i = 0; i < ranks.length; i++) {
 }
 
 
-Plot.create("height by femur length", "femur length [cm]", "height [cm]", orderedFemurLength, orderedHeight);
+Plot.create("height by femur length", "femur length [cm]", "height [cm]");
+Plot.add("x", orderedFemurLength, orderedHeight);
+Plot.setStyle(0, "black,none,2.0,X");
 Plot.show();
