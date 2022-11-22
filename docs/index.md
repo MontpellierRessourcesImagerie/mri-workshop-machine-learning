@@ -30,17 +30,16 @@
      * [Images and CP-workflow for the exercises](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/tree/master/rf/cp) 
 * Day 2, part 3
   * [DL Ex1_Clusterization_linearly_separated](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Deep_learning_part_1/Ex1_Clusterization_linearly_separated.ipynb)
-  * [DL Ex2_Clusterization_not_linearly_separated_parabole](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Deep_learning_part_1/Ex2_Clusterization_not_linearly_separated_parabole.ipynb)
+  * [DL Ex2_Clusterization_not_linearly_separated_parabola](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Deep_learning_part_1/Ex2_Clusterization_not_linearly_separated_parabola.ipynb)
   * [DL Ex3_Clusterization_not_linearly_separated_spiral](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day02/Deep_learning_part_1/Ex3_Clusterization_not_linearly_separated_spiral.ipynb)
   * Materials
-    * [Introduction_deep_learning_part1_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/day02/Deep_learning_part_1/Introduction_deep_learning_part1_2022.pdf)
+    * [Introduction_deep_learning_part1_2022.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/day02/Deep_learning_part_1/Introduction_deep_learning_part1_2022.pdf)
 * Day 3 
-  * [DL Ex4_MNIST_dense_vs_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex4_MNIST_dense_vs_convolutional_nn.ipynb) - The solution of this exercice can be found [here](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex4_MNIST_dense_vs_convolutional_nn_SOLUCE.ipynb)
-  * [DL Ex5_CIFAR_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex5_CIFAR_convolutional_nn.ipynb) - The solution for the BaseLine can be found [here](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex5_BaseLine_CIFAR_convolutional_nn.ipynb), with image augmentation [here](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex5_ImAugmentation_CIFAR_convolutional_nn.ipynb) and with the BatchNorm [here](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex5_BatchNorm_CIFAR_convolutional_nn.ipynb)
-  * [DL Ex6_RBC_image_classification](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex6_RBC_image_classification.ipynb) - the data for this notebook can be downloaded from [here](https://drive.google.com/drive/folders/1dcAE4Yu_nVAGUgUgEVok-ZUT55e39WNV?usp=sharing)
-  * [DL Ex7_Unet](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/deep_learning/Notebooks/Ex7_Unet.ipynb)
+  * [DL Ex4_MNIST_dense_vs_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/masterday03/Deep_learning_part_2/Ex4_MNIST_dense_vs_convolutional_nn.ipynb)
+  * [DL Ex5_RBC_image_classification](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day03/Deep_learning_part_2/Ex5_RBC_image_classification.ipynb)
+  * [DL Ex6_bacteria_segmentation_with_Unet](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day03/Deep_learning_part_2/Ex6_bacteria_segmentation_unet.ipynb)
+  * [DL_Ex7_nuclei_segmentation_with_StarDist](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day03/Deep_learning_part_2/Ex7_nuclei_segmentation_stardist.ipynb)
   * Materials
-    * [Introduction_deep_learning_part2_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Introduction_deep_learning_part2_2021.pdf) 
-    * [Deep_learning_real_case_applications_part3_2021.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/deep_learning/Deep_learning_real_case_applications_part3_2021.pdf)
+    * [Introduction_deep_learning_part2_2022.pdf]() 
 
 <div class="end-examples"></div>
