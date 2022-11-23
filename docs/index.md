@@ -35,11 +35,11 @@
   * Materials
     * [Introduction_deep_learning_part1_2022.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/day02/Deep_learning_part_1/Introduction_deep_learning_part1_2022.pdf)
 * Day 3 
-  * [DL Ex4_MNIST_dense_vs_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/masterday03/Deep_learning_part_2/Ex4_MNIST_dense_vs_convolutional_nn.ipynb)
+  * [DL Ex4_MNIST_dense_vs_convolutional_nn](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day03/Deep_learning_part_2/Ex4_MNIST_dense_vs_convolutional_nn.ipynb)
   * [DL Ex5_RBC_image_classification](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day03/Deep_learning_part_2/Ex5_RBC_image_classification.ipynb)
   * [DL Ex6_bacteria_segmentation_with_Unet](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day03/Deep_learning_part_2/Ex6_bacteria_segmentation_unet.ipynb)
   * [DL_Ex7_nuclei_segmentation_with_StarDist](https://colab.research.google.com/github/MontpellierRessourcesImagerie/mri-workshop-machine-learning/blob/master/day03/Deep_learning_part_2/Ex7_nuclei_segmentation_stardist.ipynb)
   * Materials
-    * [Introduction_deep_learning_part2_2022.pdf]() 
+    * [Introduction_deep_learning_part2_2022.pdf](https://github.com/MontpellierRessourcesImagerie/mri-workshop-machine-learning/raw/master/day03/Deep_learning_part_2/Introduction_deep_learning_part2_2022.pdf) 
 
 <div class="end-examples"></div>
