@@ -1,6 +1,6 @@
 \chapter{Clustering}
 
-In the exercises in this chapter you will first use a visualization of the k-means clustering that helps to understand how it works. You will then apply the k-means clustering as a machine learning method to segment plants based on their color.
+In the exercises in this chapter you will first use a visualization of the k-means clustering that helps to understand how it works. You will then apply the k-means clustering as a machine learning method to segment plants based on their color and than on features of the scratch-assay-images.
 
 \section{K-means clustering}
 
@@ -45,21 +45,21 @@ Run the k-means algorithm with different initialization strategies and on differ
 
 \section{Using K-means clustering for color segmentation}
 
-Images of Arabidopsis thaliana are taken in regular intervals. The aim is to measure the speed with which the area of the rosette of leaves augments under different conditions and treatments. You will use k-means clustering to segment the rosettes of the plants. You will use the {\tt Color clustering} tool from {\tt FIJI} which comes with the {\tt Weka} machine learning software.   
+Images of Arabidopsis thaliana are taken in regular intervals. The aim is to measure the speed with which the area of the rosette of leaves augments under different conditions and treatments. You will use k-means clustering to segment the rosettes of the plants. You will create a color-stack using an appropriate color-space (RGB, HSB or Lab) and use the {\tt k-means segmentation} tool. 
 
 \begin{figure}[!htb]
  \centering
  \includegraphics[width=8cm]{arabidopsis}
- \caption{An arabidopsis plant at 3 different stages.}
+ \caption{Arabidopsis plant at 3 different stages.}
  \label{figure:arabidopsis}
 \end{figure}
 
 \begin{enumerate}
-\item Run {\tt FIJI} and open one of the images from the folder {\tt 03 - plants}. Open the {\tt Color clustering} tool from the menu {\tt Plugins>Segmentation>Color Clustering}.
+\item Run {\tt FIJI} and open one of the images from the folder {\tt 03 - plants}. Convert the image to a color stack using one of the commands {\tt RGB Stack}, {\tt HSB Stack} or {\tt Lab Stack} from the menu {\tt Image>Type}.  Run the {\tt k-means segmentation} tool from the menu {\tt Plugins>k-means experiment>k-means segmentation}.
 \begin{figure}[!htb]
  \centering
- \includegraphics[width=8cm]{color_clustering}
- \caption{The color clustering tool.}
+ \includegraphics[width=4cm]{color_clustering}
+ \caption{The options of the k-means segmentation command.}
  \label{figure:color_clustering}
 \end{figure}
 \item How many clusters do you think are appropriate? 
@@ -67,12 +67,7 @@ Images of Arabidopsis thaliana are taken in regular intervals. The aim is to mea
 Number of clusters:
 
 \end{verbatim}
-Configure the k-means algorithm to use the number of clusters you have decided to use. Click on the field {\tt SimpleKMeans} to open the options-dialog of the algorithm. Set the number of clusters in the field {\tt numClusters}. You can also change the initialization strategy.
-
-\item Reduce the {\tt Number of Samples}, select one or more features and run the k-means clustering. Note that you can mix features from different color spaces. Experiment with different settings until you obtain a reasonable segmentation of the plant.
-
-\item 
-Display the result image and the probability map. The value of a pixel in the result image corresponds to the cluster to which the color of the pixel belongs. The {\tt Probability Map} shows a stack of images, one slice for each cluster. 
+Configure the k-means segmentation to use the number of clusters you have decided to use and run it on the stack. The value of a pixel in the result image corresponds to the cluster to which the pixel belongs. 
 
 What is the class of the color values belonging to the plant?
 \begin{verbatim}
@@ -85,33 +80,33 @@ Class of reference object:
 
 \end{verbatim}
 
-\item Create a selection (roi) from the result of the pixel classification and display it on the original input image. How good is the selection? Measure the area of the surface of the plant.
+\item Create a selection (roi) from the result of the pixel classification and display it on the original input image. Use the commands {\tt select label(s)} and {\tt Keep largest region} to isolate the target label. Then open the threshold adjuster (shift-t) and run the command {\tt create selection}. Transfer the selection to the original input image (restore selection or use the roi-manager). How good is the selection? Measure the area of the surface of the plant.
 \begin{verbatim}
 Area of the plant:
 
 \end{verbatim}
-\item Check the log--window. The clustering algorithm has written information about the clustering into the log--window. Redo the clustering using the features {\tt a} and {\tt b} of the CIELab color space. Find out the number of the cluster corresponding to the plant and find the following information in the log:
+\item Check the log--window. The clustering algorithm has written the k mean-vectors into the log. What are their values?
 \begin{verbatim}
-Starting point of the cluster:
-Final cluster mean a:
-Final cluster mean b:
-Size of the training data-set:
-\end{verbatim}
-\item Visualize the data! The first three fields allow to select the data displayed on the x-- and y--axis and coded a color. Display the a--feature on the X and the b--feature on the Y axis. Let the color represent the cluster. You can change the display-colors of the clusters by clicking on the name of the cluster in the lower part of the window. Set the color of the cluster corresponding to the plant to green. If another cluster was already displayed in green set  it to a different color.
-How well separated are the green points from the other points?
+k mean vectors:
 
-\begin{figure}[!htb]
- \centering
- \includegraphics[width=8cm]{cluster_visualization}
- \caption{Visualization of the clusters.}
- \label{figure:cluster-visualization}
-\end{figure}
-
-\item Run the clustering again and use only the a--feature this time. Control the resulting segmentation and check the points in the data--visualization. Is the result better or worse than before?
-\begin{verbatim}
 
 
 
 \end{verbatim}
+
+\item Apply the saved k-means classifier on a different image from the plant-series.
+\end{enumerate}
+
+\section{Using K-means clustering on other features}
+
+We can use the k-means clustering not only with colors but also with other features. 
+
+\begin{enumerate}
+\item Open an image from {\tt scratch-assay}-folder. Create two or three feature images from the input image for example by using FeatureJ. Use appropriate scales when creating the features. Use {\tt Image>Color>Merge Channels...} to create a stack of the feature images. Run the k-means clustering on the stack. What is the area of the gap?
+\begin{verbatim}
+Area of the gap:
+
+\end{verbatim}
+
 \end{enumerate}
 
